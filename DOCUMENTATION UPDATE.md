@@ -52,11 +52,11 @@ lib/
 ```
 
 ## Screenshots
-![home screen](1-1.png)
-![ratio calculator](1-2.png)
-![stopwatch](1-3.png)
-![grinder settings](1-4.png)
-![notes](1-5.png)
+![home screen](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/1-1.png)
+![ratio calculator](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/1-2.png)
+![stopwatch](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/1-3.png)
+![grinder settings](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/1-4.png)
+![notes](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/1-5.png)
 
 
 ## Known issues and next steps
