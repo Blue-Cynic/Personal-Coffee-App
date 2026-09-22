@@ -8,7 +8,7 @@ mockup shows what it looks like.
 Put your mockup images or PDF in `assets/` and embed them here, one heading per
 screen.
 
-[mockup](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/Espinosa%20Mockup.jpg)
+![mockup](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/Espinosa%20Mockup.jpg)
 
 ## Wireframes
 
