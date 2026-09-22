@@ -8,10 +8,8 @@ a new screen, so keeping it current helps you more than it helps anyone reading.
 that *shows* your palette, type scale, spacing and components, put it in
 `assets/`, and link it here:
 
-```markdown
-![Design system](assets/design-system.png)
+
 ![Design system (PDF)](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/Espinosa%20Design%20System%20V2.pdf)
-```
 
 Figma, Canva, Excalidraw, Google Slides or Docs exported to PDF all work. A
 reader should be able to see your app's look in one glance, without reading a
