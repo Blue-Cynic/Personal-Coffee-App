@@ -27,10 +27,10 @@ class _GrindSettingsScreenState extends State<GrindSettingsScreen> {
   String _method = 'Moka Pot';
   String _roast = 'Medium';
 
+  int? get _clicks => _settings[_method]?[_roast];
+
   @override
   Widget build(BuildContext context) {
-    final clicks = _settings[_method]?[_roast];
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Grind Setting'),
@@ -90,17 +90,19 @@ class _GrindSettingsScreenState extends State<GrindSettingsScreen> {
 
             const SizedBox(height: 24),
 
-            if (clicks != null)
+            if (_clicks != null)
               Card(
                 color: Theme.of(context).colorScheme.primaryContainer,
                 child: Padding(
                   padding: const EdgeInsets.all(16),
                   child: Text(
-                    'Suggested setting: $clicks clicks',
+                    'Suggested setting: $_clicks clicks',
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
-              ),
+              )
+              else
+                const Text('No setting for this combo just yet'),
           ],
         ),
       ),
