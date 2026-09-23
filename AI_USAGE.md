@@ -19,6 +19,14 @@ At least six entries. One per real use. Every entry needs a commit link.
 - **What I kept, what I changed, and why:** I kept a good chunk of it because it is a foundation to the screens. Of course, I had to make changes to adapt it, particularly for stopwatch and ratio calculator
 - **Commit:** https://github.com/Blue-Cynic/Personal-Coffee-App/commit/d8bef42568ff5ef0ba88c698590bc82639c844da
 
+### 2026-09-19 - Stopwatch Got Me Stopped
+
+- **Tool:** Claude
+- **What I asked for:** I asked Claude if it could assist me with the logic of the stopwatch for my stopwatch screen. This is because I am not well versed in StatefulWdigets.
+- **What it gave back:** Claude gave me a working stopwatch.
+- **What I kept, what I changed, and why:** I kept most of it, just to preserve the logic as it worked well. As for changes, I changed a good bit of it because Claude provided it yet it did not closely resemble my mockup. So I ensured the stopwatch works and looks just like in my mockup.
+- **Commit:** https://github.com/Blue-Cynic/Personal-Coffee-App/commit/d8bef42568ff5ef0ba88c698590bc82639c844da
+
 ### YYYY-MM-DD - short title
 
 - **Tool:**
