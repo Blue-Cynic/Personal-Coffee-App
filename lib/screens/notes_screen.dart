@@ -26,6 +26,80 @@ class _NotesScreenState extends State<NotesScreen> {
     });
   }
 
+  void _showAddNote() {
+    final controller = TextEditingController();
+    String method = 'Moka Pot';
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('New Brew Note'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              DropdownButtonFormField<String>(
+                initialValue: method,
+                decoration: const InputDecoration(
+                  labelText: 'Brew method',
+                ),
+                items: const [
+                  DropdownMenuItem(
+                    value: 'Moka Pot',
+                    child: Text('Moka Pot'),
+                  ),
+                  DropdownMenuItem(
+                    value: 'French Press',
+                    child: Text('French Press'),
+                  ),
+                  DropdownMenuItem(
+                    value: 'Cold Brew',
+                    child: Text('Cold Brew'),
+                  ),
+                ],
+                onChanged: (value) {
+                  if (value != null) {
+                    method = value;
+                  }
+                },
+              ),
+              const SizedBox(height: 12),
+              TextField(
+                controller: controller,
+                maxLines: 3,
+                decoration: const InputDecoration(
+                  labelText: 'Notes',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Cancel'),
+            ),
+            FilledButton(
+              onPressed: () {
+                if (controller.text.trim().isEmpty) return;
+
+                _addNote(
+                  BrewNote(
+                    brewMethod: method,
+                    text: controller.text.trim(),
+                  ),
+                );
+
+                Navigator.pop(context);
+              },
+              child: const Text('Save'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +125,7 @@ class _NotesScreenState extends State<NotesScreen> {
               },
             ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: _showAddNote,
         child: const Icon(Icons.add),
       ),
     );
