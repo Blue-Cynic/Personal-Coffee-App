@@ -29,8 +29,26 @@ class _GrindSettingsScreenState extends State<GrindSettingsScreen> {
 
   int? get _clicks => _settings[_method]?[_roast];
 
+  void _setMethod(String? value) {
+    if (value == null) return;
+
+    setState(() {
+      _method = value;
+    });
+  }
+
+  void _setRoast(String? value) {
+    if (value == null) return;
+
+    setState(() {
+      _roast = value;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    final clicks = _clicks;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Grind Setting'),
@@ -57,13 +75,7 @@ class _GrindSettingsScreenState extends State<GrindSettingsScreen> {
                   child: Text(method),
                 );
               }).toList(),
-              onChanged: (value) {
-                if (value == null) return;
-
-                setState(() {
-                  _method = value;
-                });
-              },
+              onChanged: _setMethod,
             ),
 
             const SizedBox(height: 16),
@@ -78,30 +90,24 @@ class _GrindSettingsScreenState extends State<GrindSettingsScreen> {
                 DropdownMenuItem(value: 'Medium', child: Text('Medium')),
                 DropdownMenuItem(value: 'Dark', child: Text('Dark')),
               ],
-              onChanged: (value) {
-                if (value == null) return;
-
-                setState(() {
-                  _roast = value;
-                });
-              },
+              onChanged: _setRoast,
             ),
 
             const SizedBox(height: 24),
 
-            if (_clicks != null)
+            if (clicks != null)
               Card(
                 color: Theme.of(context).colorScheme.primaryContainer,
                 child: Padding(
                   padding: const EdgeInsets.all(16),
                   child: Text(
-                    'Suggested setting: $_clicks clicks',
+                    'Suggested setting: $clicks clicks',
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
               )
-              else
-                const Text('No setting for this combo just yet'),
+            else
+              const Text('No setting found for this combination yet.'),
           ],
         ),
       ),

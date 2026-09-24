@@ -106,21 +106,14 @@ class _NotesScreenState extends State<NotesScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final hasNotes = _notes.isNotEmpty;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Notes'),
       ),
-      body: _notes.isEmpty
-          ? const Center(
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Text(
-                  'No notes yet. Tap the + button to add one.',
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            )
-          : ListView.builder(
+      body: hasNotes
+          ? ListView.builder(
               padding: const EdgeInsets.all(16),
               itemCount: _notes.length,
               itemBuilder: (context, idx) {
@@ -133,6 +126,15 @@ class _NotesScreenState extends State<NotesScreen> {
                   ),
                 );
               },
+            )
+          : const Center(
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  'No notes yet. Tap the + button to add one.',
+                  textAlign: TextAlign.center,
+                ),
+              ),
             ),
       floatingActionButton: FloatingActionButton(
         onPressed: _showAddNote,
