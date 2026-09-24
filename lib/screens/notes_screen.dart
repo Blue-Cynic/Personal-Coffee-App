@@ -32,7 +32,7 @@ class _NotesScreenState extends State<NotesScreen> {
 
     showDialog(
       context: context,
-      builder: (context) {
+      builder: (dialogContext) {
         return AlertDialog(
           title: const Text('New Brew Note'),
           content: Column(
@@ -76,28 +76,32 @@ class _NotesScreenState extends State<NotesScreen> {
           ),
           actions: [
             TextButton(
-              onPressed: () => Navigator.pop(context),
+              onPressed: () => Navigator.pop(dialogContext),
               child: const Text('Cancel'),
             ),
             FilledButton(
               onPressed: () {
-                if (controller.text.trim().isEmpty) return;
+                final text = controller.text.trim();
+
+                if (text.isEmpty) return;
 
                 _addNote(
                   BrewNote(
                     brewMethod: method,
-                    text: controller.text.trim(),
+                    text: text,
                   ),
                 );
 
-                Navigator.pop(context);
+                Navigator.pop(dialogContext);
               },
               child: const Text('Save'),
             ),
           ],
         );
       },
-    );
+    ).then((_) {
+      controller.dispose();
+    });
   }
 
   @override
@@ -108,13 +112,19 @@ class _NotesScreenState extends State<NotesScreen> {
       ),
       body: _notes.isEmpty
           ? const Center(
-              child: Text('No notes yet. Tap the + button to add one.'),
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  'No notes yet. Tap the + button to add one.',
+                  textAlign: TextAlign.center,
+                ),
+              ),
             )
           : ListView.builder(
               padding: const EdgeInsets.all(16),
               itemCount: _notes.length,
-              itemBuilder: (context, index) {
-                final note = _notes[index];
+              itemBuilder: (context, idx) {
+                final note = _notes[idx];
 
                 return Card(
                   child: ListTile(

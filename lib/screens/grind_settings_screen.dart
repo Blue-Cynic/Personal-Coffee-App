@@ -75,7 +75,6 @@ class _GrindSettingsScreenState extends State<GrindSettingsScreen> {
                 border: OutlineInputBorder(),
               ),
               items: const [
-                DropdownMenuItem(value: 'Light', child: Text('Light')),
                 DropdownMenuItem(value: 'Medium', child: Text('Medium')),
                 DropdownMenuItem(value: 'Dark', child: Text('Dark')),
               ],
