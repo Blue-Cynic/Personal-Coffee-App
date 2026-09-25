@@ -27,6 +27,30 @@ At least six entries. One per real use. Every entry needs a commit link.
 - **What I kept, what I changed, and why:** I kept most of it, just to preserve the logic as it worked well. As for changes, I changed a good bit of it because Claude provided it yet it did not closely resemble my mockup. So I ensured the stopwatch works and looks just like in my mockup.
 - **Commit:** https://github.com/Blue-Cynic/Personal-Coffee-App/commit/d8bef42568ff5ef0ba88c698590bc82639c844da
 
+### 2026-09-22 - Brewing the Brew Notes
+
+- **Tool:** ChatGPT
+- **What I asked for:** I asked ChatGPT if it can give me clues for brew notes
+- **What it gave back:** It gave me clues on brew notes, which then I applied some of. I realized that what it gave me was lacking and not really in scope of what I actually have in mind. A drastic overhaul by me was eventually done.
+- **What I kept, what I changed, and why:** I kept the general structure yet changed much of everything else to be in line with my proposal.
+- **Commit:** https://github.com/Blue-Cynic/Personal-Coffee-App/commit/05c32cdf00f9d86d9da200ac8d58aa58a3e09c95
+
+### 2026-09-22 - The Grind on the Grind Settings
+
+- **Tool:** ChatGPT
+- **What I asked for:** Like with brew notes, I asked for clues for grind settings.
+- **What it gave back:** It gave me some clues on how to go about it
+- **What I kept, what I changed, and why:** I kept the core idea but changed a good chunk because like with notes, it was obvious the AI was straying from the actual idea. An example is it adding light roast so I had to remove it. Still, was kinda useful because it let me know it will not be painful to add light roast in the future.
+- **Commit:** https://github.com/Blue-Cynic/Personal-Coffee-App/commit/05c32cdf00f9d86d9da200ac8d58aa58a3e09c95
+
+### YYYY-MM-DD - short title
+
+- **Tool:**
+- **What I asked for:**
+- **What it gave back:**
+- **What I kept, what I changed, and why:**
+- **Commit:** https://github.com/YOUR-USERNAME/YOUR-REPO/commit/SHA
+
 ### YYYY-MM-DD - short title
 
 - **Tool:**
