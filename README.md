@@ -6,14 +6,14 @@
   New here? Read START-HERE.md first. Delete this comment when you are done.
 -->
 
-# App Name
+# Personal Coffee App
 
-> One sentence: what this app does, and who it is for.
+> The here is a personal Flutter app for creating and keeping coffee brewing recipes and the variables that may affect the outcome of the drink. Said variables are: grind size, roast, brew time, and the brew method (currently supports moka pot, french press, and cold brew). It currently supports the Timemore C3ESP grinder.
 
 **Live demo:** https://blue-cynic.github.io/Personal-Coffee-App/ <!-- GitHub Pages is set up already; replace if you host elsewhere -->
 **Demo video:** `docs/demo.mp4` (link it here once it exists)
 **Course:** Applications Development and Emerging Technologies (6ADET), Holy Angel University
-**Author:** Your Name
+**Author:** Raizen Espinosa
 
 This repository lives in the author's own GitHub account and is public on
 purpose. There is no `student.json` here and there should not be one: see
