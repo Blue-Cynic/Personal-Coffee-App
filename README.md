@@ -39,9 +39,10 @@ A repo without screenshots reads as abandoned, whatever the code says.
 
 Three to five bullets. What can a user actually do?
 
-- ...
-- ...
-- ...
+- The user can pick from 3 brew types to figure out what grind setting they need to use.
+- The user can calculate the coffee to water ratio of their recipe.
+- The user can create coffee recipe with the app.
+- The user can write down additional notes for their recipe.
 
 ## Built with
 
