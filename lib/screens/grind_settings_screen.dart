@@ -8,26 +8,28 @@ class GrindSettingsScreen extends StatefulWidget {
 }
 
 class _GrindSettingsScreenState extends State<GrindSettingsScreen> {
-  static const Map<String, Map<String, int>> _settings = {
-    // For now, a placeholder click values. I still need to do some research
+  static const Map<String, Map<String, String>> _settings = {
+    // Yeah, french press and cold brew share the same grind settings
+    // This is because they both use coarse grinds and from experience, medium and dark both can use the same settings
+    // Some insist cold brew needs extra coarse grinds, I find that wrong from experience and means more hours to brew it
     'Moka Pot': {
-      'Medium': 16,
-      'Dark': 14,
+      'Medium': '30-40',
+      'Dark': '32-42',
     },
     'French Press': {
-      'Medium': 30,
-      'Dark': 28,
+      'Medium': '60-69',
+      'Dark': '60-69',
     },
     'Cold Brew': {
-      'Medium': 34,
-      'Dark': 32,
+      'Medium': '60-69',
+      'Dark': '60-69',
     },
   };
 
   String _method = 'Moka Pot';
   String _roast = 'Medium';
 
-  int? get _clicks => _settings[_method]?[_roast];
+  String? get _clicks => _settings[_method]?[_roast];
 
   void _setMethod(String? value) {
     if (value == null) return;

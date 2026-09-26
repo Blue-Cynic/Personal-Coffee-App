@@ -27,6 +27,14 @@ At least six entries. One per real use. Every entry needs a commit link.
 - **What I kept, what I changed, and why:** I kept most of it, just to preserve the logic as it worked well. As for changes, I changed a good bit of it because Claude provided it yet it did not closely resemble my mockup. So I ensured the stopwatch works and looks just like in my mockup.
 - **Commit:** https://github.com/Blue-Cynic/Personal-Coffee-App/commit/d8bef42568ff5ef0ba88c698590bc82639c844da
 
+### 2026-09-19 - Stopwatch Got Me Stopped
+
+- **Tool:** Claude
+- **What I asked for:** I asked Claude to help me build the logic for ratio_calculator.dart as I was a little stumped.
+- **What it gave back:** Being specific with what I asked for, Claude gave me a chunk of code to work with, but not the whole thing.
+- **What I kept, what I changed, and why:** I kept pretty much the entire thing because all I asked for was the code that drives the calculator to work. What changed was the fact it was put inside of a screen I built for it. As for why, I had some trouble with the handling of inputs and calculations at first. Given the time constraints of the week, I had to use Claude for this one or else I'd get stumped for too long on it.
+- **Commit:** https://github.com/Blue-Cynic/Personal-Coffee-App/commit/d8bef42568ff5ef0ba88c698590bc82639c844da
+
 ### 2026-09-22 - Brewing the Brew Notes
 
 - **Tool:** ChatGPT
@@ -42,14 +50,6 @@ At least six entries. One per real use. Every entry needs a commit link.
 - **What it gave back:** It gave me some clues on how to go about it
 - **What I kept, what I changed, and why:** I kept the core idea but changed a good chunk because like with notes, it was obvious the AI was straying from the actual idea. An example is it adding light roast so I had to remove it. Still, was kinda useful because it let me know it will not be painful to add light roast in the future.
 - **Commit:** https://github.com/Blue-Cynic/Personal-Coffee-App/commit/05c32cdf00f9d86d9da200ac8d58aa58a3e09c95
-
-### YYYY-MM-DD - short title
-
-- **Tool:**
-- **What I asked for:**
-- **What it gave back:**
-- **What I kept, what I changed, and why:**
-- **Commit:** https://github.com/YOUR-USERNAME/YOUR-REPO/commit/SHA
 
 ### YYYY-MM-DD - short title
 
