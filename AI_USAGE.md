@@ -14,9 +14,9 @@ At least six entries. One per real use. Every entry needs a commit link.
 ### 2026-09-19 - Boilerplate Designer
 
 - **Tool:** Claude
-- **What I asked for:** I asked Claude if it could give me a good foundation for all my screens that follows my mockup. Essentially, asking Claude to give me boilerplate code that does a good job in depicting the design of my mockup
+- **What I asked for:** I asked Claude if it could give me a good foundation for all my screens that follows my mockup. Essentially, asking Claude to give me boilerplate code that does a good job in depicting the design of my mockup.
 - **What it gave back:** A good base template to work with for my screens.
-- **What I kept, what I changed, and why:** I kept a good chunk of it because it is a foundation to the screens. Of course, I had to make changes to adapt it, particularly for stopwatch and ratio calculator
+- **What I kept, what I changed, and why:** I kept a good chunk of it because it is a foundation to the screens. Of course, I had to make changes to adapt it, particularly for stopwatch and ratio calculator.
 - **Commit:** https://github.com/Blue-Cynic/Personal-Coffee-App/commit/d8bef42568ff5ef0ba88c698590bc82639c844da
 
 ### 2026-09-19 - Stopwatch Got Me Stopped
@@ -51,13 +51,13 @@ At least six entries. One per real use. Every entry needs a commit link.
 - **What I kept, what I changed, and why:** I kept the core idea but changed a good chunk because like with notes, it was obvious the AI was straying from the actual idea. An example is it adding light roast so I had to remove it. Still, was kinda useful because it let me know it will not be painful to add light roast in the future.
 - **Commit:** https://github.com/Blue-Cynic/Personal-Coffee-App/commit/05c32cdf00f9d86d9da200ac8d58aa58a3e09c95
 
-### YYYY-MM-DD - short title
+### 2026-09-27 - Strength Badge Strain
 
-- **Tool:**
-- **What I asked for:**
-- **What it gave back:**
-- **What I kept, what I changed, and why:**
-- **Commit:** https://github.com/YOUR-USERNAME/YOUR-REPO/commit/SHA
+- **Tool:** Claude
+- **What I asked for:** I asked Claude for help in integrating my strength badge calculator.
+- **What it gave back:** Claude gave blocks of modified code for notes and ratio calculator which will use the strength badge calculator.
+- **What I kept, what I changed, and why:** I kept it all and changed nothing. As for why, time constraints. However, I did read the blocks of code and tested what Claude had. The outcomes were good, so I accepted them as is.
+- **Commit:** https://github.com/Blue-Cynic/Personal-Coffee-App/commit/9e27ad08fa148d5e38ccddf1817bbf8a08f39b2c
 
 ## 2. Where the AI got it wrong
 
@@ -65,6 +65,20 @@ Three cases. Be specific. If you write that the AI was never wrong, this section
 scores zero.
 
 ### Case 1 - short title
+
+- **What it gave me:**
+- **What was wrong with it:**
+- **What I did instead:**
+- **Commit:** https://github.com/YOUR-USERNAME/YOUR-REPO/commit/SHA
+
+### Case 2 - short title
+
+- **What it gave me:**
+- **What was wrong with it:**
+- **What I did instead:**
+- **Commit:** https://github.com/YOUR-USERNAME/YOUR-REPO/commit/SHA
+
+### Case 3 - short title
 
 - **What it gave me:**
 - **What was wrong with it:**

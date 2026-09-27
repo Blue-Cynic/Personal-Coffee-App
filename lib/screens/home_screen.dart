@@ -3,6 +3,8 @@ import 'ratio_calculator_screen.dart';
 import 'stopwatch_screen.dart';
 import 'grind_settings_screen.dart';
 import 'notes_screen.dart';
+import '../widgets/app_nav_bar.dart';
+import '../utils/app_navigation.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -76,6 +78,10 @@ class HomeScreen extends StatelessWidget {
             ],
           );
         },
+      ),
+      bottomNavigationBar: AppNavBar(
+        activeRoute: 'home',
+        onSelect: (route) => navigateToRoute(context, route),
       ),
     );
   }

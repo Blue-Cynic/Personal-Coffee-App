@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../utils/brew_calculations.dart';
 import 'notes_screen.dart';
+import '../widgets/app_nav_bar.dart';
+import '../utils/app_navigation.dart';
 
 class RatioCalculatorScreen extends StatefulWidget {
   const RatioCalculatorScreen({super.key});
@@ -65,6 +67,10 @@ class _RatioCalculatorScreenState extends State<RatioCalculatorScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Ratio Calculator'),
+      ),
+      bottomNavigationBar: AppNavBar(
+        activeRoute: 'calculator',
+        onSelect: (route) => navigateToRoute(context, route),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),

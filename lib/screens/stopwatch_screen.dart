@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import '../widgets/app_nav_bar.dart';
+import '../utils/app_navigation.dart';
 
 class StopwatchScreen extends StatefulWidget {
   const StopwatchScreen({super.key});
@@ -70,6 +72,10 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Brew Stopwatch'),
+      ),
+      bottomNavigationBar: AppNavBar(
+        activeRoute: 'timer',
+        onSelect: (route) => navigateToRoute(context, route),
       ),
       body: Center(
         child: Column(

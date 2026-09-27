@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive_ce_flutter/hive_ce_flutter.dart';
 import '../utils/brew_calculations.dart';
+import '../widgets/app_nav_bar.dart';
+import '../utils/app_navigation.dart';
 
 class BrewNote {
   final String brewMethod;
@@ -269,6 +271,10 @@ class _NotesScreenState extends State<NotesScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Notes'),
+      ),
+      bottomNavigationBar: AppNavBar(
+        activeRoute: 'notes',
+        onSelect: (route) => navigateToRoute(context, route),
       ),
       body: hasNotes
           ? ListView.builder(
