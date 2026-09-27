@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../utils/brew_calculations.dart';
+import 'notes_screen.dart';
 
 class RatioCalculatorScreen extends StatefulWidget {
   const RatioCalculatorScreen({super.key});
@@ -12,9 +14,9 @@ class _RatioCalculatorScreenState extends State<RatioCalculatorScreen> {
   final TextEditingController _ratioController = TextEditingController(text: '15');
 
   double _waterResult = 0;
+  String _strengthLabel = '';
   bool _hasResult = false;
 
-  // Recalculates the water needed from the amount of coffee and the ratio
   void _calculateWater() {
     double? coffeeGrams = double.tryParse(_coffeeController.text);
     double? ratio = double.tryParse(_ratioController.text);
@@ -28,8 +30,27 @@ class _RatioCalculatorScreenState extends State<RatioCalculatorScreen> {
 
     setState(() {
       _waterResult = coffeeGrams * ratio;
+      _strengthLabel = calculateStrengthLabel(ratio);
       _hasResult = true;
     });
+  }
+
+  void _saveToNotes() {
+    final coffeeGrams = int.tryParse(_coffeeController.text);
+
+    if (coffeeGrams == null || !_hasResult) {
+      return;
+    }
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => NotesScreen(
+          prefillCoffeeGrams: coffeeGrams,
+          prefillWaterGrams: _waterResult.round(),
+        ),
+      ),
+    );
   }
 
   @override
@@ -78,18 +99,30 @@ class _RatioCalculatorScreenState extends State<RatioCalculatorScreen> {
               },
             ),
             const SizedBox(height: 24),
-            if (_hasResult)
+            if (_hasResult) ...[
               Card(
                 color: Theme.of(context).colorScheme.primaryContainer,
                 child: Padding(
                   padding: const EdgeInsets.all(16),
-                  child: Text(
-                    'Use ${_waterResult.toStringAsFixed(1)}g of water',
-                    style: Theme.of(context).textTheme.titleLarge,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Use ${_waterResult.toStringAsFixed(1)}g of water',
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                      Chip(label: Text(_strengthLabel)),
+                    ],
                   ),
                 ),
-              )
-            else
+              ),
+              const SizedBox(height: 16),
+              FilledButton.icon(
+                onPressed: _saveToNotes,
+                icon: const Icon(Icons.save),
+                label: const Text('Save to Notes'),
+              ),
+            ] else
               const Text('Enter values above to see the water amount.'),
           ],
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_ce_flutter/hive_ce_flutter.dart';
+import '../utils/brew_calculations.dart';
 
 class BrewNote {
   final String brewMethod;
@@ -61,18 +62,17 @@ class BrewNote {
   }
 }
 
-String calculateStrengthLabel(double ratio) {
-  if (ratio <= 14) {
-    return 'Strong';
-  } else if (ratio <= 17) {
-    return 'Balanced';
-  } else {
-    return 'Mild';
-  }
-}
-
 class NotesScreen extends StatefulWidget {
-  const NotesScreen({super.key});
+  final int? prefillCoffeeGrams;
+  final int? prefillWaterGrams;
+  final String? prefillBrewMethod;
+
+  const NotesScreen({
+    super.key,
+    this.prefillCoffeeGrams,
+    this.prefillWaterGrams,
+    this.prefillBrewMethod,
+  });
 
   @override
   State<NotesScreen> createState() => _NotesScreenState();
@@ -80,6 +80,21 @@ class NotesScreen extends StatefulWidget {
 
 class _NotesScreenState extends State<NotesScreen> {
   final Box _notesBox = Hive.box('notes');
+
+  @override
+  void initState() {
+    super.initState();
+
+    if (widget.prefillCoffeeGrams != null && widget.prefillWaterGrams != null) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        _showAddNoteDialog(
+          initialCoffeeGrams: widget.prefillCoffeeGrams,
+          initialWaterGrams: widget.prefillWaterGrams,
+          initialMethod: widget.prefillBrewMethod,
+        );
+      });
+    }
+  }
 
   List<BrewNote> get _notes {
     final notes = _notesBox.values
@@ -96,15 +111,23 @@ class _NotesScreenState extends State<NotesScreen> {
     setState(() {});
   }
 
-  void _showAddNoteDialog() {
-    final coffeeController = TextEditingController();
-    final waterController = TextEditingController();
+  void _showAddNoteDialog({
+    int? initialCoffeeGrams,
+    int? initialWaterGrams,
+    String? initialMethod,
+  }) {
+    final coffeeController = TextEditingController(
+      text: initialCoffeeGrams?.toString() ?? '',
+    );
+    final waterController = TextEditingController(
+      text: initialWaterGrams?.toString() ?? '',
+    );
     final grindController = TextEditingController();
     final brewTimeController = TextEditingController();
     final tempController = TextEditingController();
     final tasteController = TextEditingController();
 
-    String method = 'Moka Pot';
+    String method = initialMethod ?? 'Moka Pot';
     String roast = 'Medium';
 
     showDialog(
@@ -277,7 +300,7 @@ class _NotesScreenState extends State<NotesScreen> {
               ),
             ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _showAddNoteDialog,
+        onPressed: () => _showAddNoteDialog(),
         child: const Icon(Icons.add),
       ),
     );
