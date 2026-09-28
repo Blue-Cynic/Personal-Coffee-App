@@ -27,7 +27,7 @@ personal data.
 ```markdown
 | Home | Ratio Calculator | Stopwatch |
 | --- | --- | --- |
-| ![Home](docs/assets/screen-home.png) | ![Ratio Calculator](docs/assets/screen-calculator.png) | ![Stopwatch](docs/assets/screen-stopwatch.png) |
+| ![Home](docs/assets/3-1.png) | ![Ratio Calculator](docs/assets/screen-calculator.png) | ![Stopwatch](docs/assets/screen-stopwatch.png) |
 
 | Grind Setting | Notes |
 | --- | --- |
