@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../theme.dart';
 import 'primary_button.dart';
 import 'outline_button.dart';
 
@@ -21,19 +22,36 @@ class TimerDisplay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
       children: [
         Text(currentTime, style: Theme.of(context).textTheme.displayLarge),
         const SizedBox(height: 32),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            PrimaryButton(label: 'Start', onPressed: isRunning ? null : onStart),
-            const SizedBox(width: 12),
-            PrimaryButton(label: 'Stop', onPressed: isRunning ? onStop : null),
-            const SizedBox(width: 12),
-            OutlineButton(label: 'Reset', onPressed: onReset),
-          ],
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md),
+          child: Row(
+            children: [
+              Expanded(
+                child: PrimaryButton(
+                  label: 'Start',
+                  onPressed: isRunning ? null : onStart,
+                ),
+              ),
+              const SizedBox(width: AppSpacing.sm),
+              Expanded(
+                child: PrimaryButton(
+                  label: 'Stop',
+                  onPressed: isRunning ? onStop : null,
+                ),
+              ),
+              const SizedBox(width: AppSpacing.sm),
+              Expanded(
+                child: OutlineButton(
+                  label: 'Reset',
+                  onPressed: onReset,
+                ),
+              ),
+            ],
+          ),
         ),
       ],
     );
