@@ -39,3 +39,5 @@ This is for me because I am a coffee addict who happens to brew with 3 brewing m
 
 _(A few dated lines saying what changed and why. Worth writing even if you only
 do it two or three times: it is the part that shows judgement.)_
+September 28, 2026:
+So, I have been hard at work in ensuring my app lives up to what was said in the proposal. That said, I feel that the UI is not a 1:1 recreation of what I had proposed. Not saying that is bad, I just feel a tad bit disappointed in myself. I am working hard to try and match my app with what I proposed, even if it is very difficult and will cause bugs, which is happening right now with the latest build.

@@ -8,7 +8,7 @@ Copy this block:
 
 ---
 
-## Week 1 (date to date)
+## Week 1 of finals
 
 **Done this week**
 - Made the repo
@@ -38,30 +38,40 @@ Copy this block:
 
 ---
 
-## Week N (date to date)
+## Week 2 of finals
 
 **Done this week**
--
+- Rebuilt notes screen
+- Integrated hive_ce
+- Finished grind settings
+- Added Timemore C3ESP settings
+- Added live ratio and strength label in notes
 
 **In progress**
--
+- Making screens use reusable widgets and themes instead of in-line code
+- Fixing bugs
+- Ensuring the data of the other screens can be passed onto notes
+- Bottom nav bar
 
 **Blocked or stuck on**
--
+- Fixing bugs, particularly the home screen's title card not appearing unless scrolled down. Decided to keep this in the backburner for now until all things are fixed.
+
 
 **Decisions made, and why**
--
+- I have decided to take a massive risk for next week. And that is to double down in ensuring this app lives up to the proposal. I want to do this because I want this app to be like what I had envisioned it.
+- The use of reusable widgets and a theme in their own files. I am very certain I remember mentioning this in my proposal, so I feel a need to do so.
 
 **Hours spent, roughly:**
+I am gonna make the guess that it took me around 48 hours in total for this. Notes screen in particular was a massive time sink, especially given the massive overhaul I had to roll out for it. I feel like I could have put more time if it were not for the other subjects butting in with my week.
 
 **Next week I will:**
--
+- Do what is currently in progress. I decided to try my hand and start already because I wanted this done given how horrible the time constraints are for this project. This is unironically depressing.
 
 ---
 
 ---
 
-## Week N (date to date)
+## Week 3 of the finals
 
 **Done this week**
 -
