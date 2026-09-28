@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import '../widgets/app_nav_bar.dart';
 import '../utils/app_navigation.dart';
+import '../widgets/timer_display.dart';
 
 class StopwatchScreen extends StatefulWidget {
   const StopwatchScreen({super.key});
@@ -46,7 +47,6 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
     });
   }
 
-  // Formats total seconds as m:ss
   String _formatTime(int totalSeconds) {
     int minutes = totalSeconds ~/ 60;
     int remainingSeconds = totalSeconds % 60;
@@ -78,34 +78,12 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
         onSelect: (route) => navigateToRoute(context, route),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              _formatTime(_seconds),
-              style: Theme.of(context).textTheme.displayLarge,
-            ),
-            const SizedBox(height: 32),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: _isRunning ? null : _start,
-                  child: const Text('Start'),
-                ),
-                const SizedBox(width: 12),
-                ElevatedButton(
-                  onPressed: _isRunning ? _stop : null,
-                  child: const Text('Stop'),
-                ),
-                const SizedBox(width: 12),
-                OutlinedButton(
-                  onPressed: _reset,
-                  child: const Text('Reset'),
-                ),
-              ],
-            ),
-          ],
+        child: TimerDisplay(
+          currentTime: _formatTime(_seconds),
+          isRunning: _isRunning,
+          onStart: _start,
+          onStop: _stop,
+          onReset: _reset,
         ),
       ),
     );

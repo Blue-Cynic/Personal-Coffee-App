@@ -3,6 +3,7 @@ import 'package:hive_ce_flutter/hive_ce_flutter.dart';
 import '../utils/brew_calculations.dart';
 import '../widgets/app_nav_bar.dart';
 import '../utils/app_navigation.dart';
+import '../widgets/recipe_list_tile.dart';
 
 class BrewNote {
   final String brewMethod;
@@ -283,16 +284,10 @@ class _NotesScreenState extends State<NotesScreen> {
               itemBuilder: (context, idx) {
                 final note = notes[idx];
 
-                return Card(
-                  child: ListTile(
-                    title: Text(
-                      '${note.brewMethod} · ${note.ratio.toStringAsFixed(1)}',
-                    ),
-                    subtitle: Text(
+                return RecipeListTile(
+                  title: '${note.brewMethod} · ${note.ratio.toStringAsFixed(1)}',
+                  subtitle:
                       '${note.roastLevel} roast · ${note.grindSetting} clicks · ${note.strengthLabel}\n${note.tasteNotes}',
-                    ),
-                    isThreeLine: true,
-                  ),
                 );
               },
             )

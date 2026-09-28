@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import '../widgets/dropdown_selector.dart';
+import '../widgets/grind_result_card.dart';
+import '../theme.dart';
 
 class GrindSettingsScreen extends StatefulWidget {
   const GrindSettingsScreen({super.key});
@@ -31,22 +34,6 @@ class _GrindSettingsScreenState extends State<GrindSettingsScreen> {
 
   String? get _clicks => _settings[_method]?[_roast];
 
-  void _setMethod(String? value) {
-    if (value == null) return;
-
-    setState(() {
-      _method = value;
-    });
-  }
-
-  void _setRoast(String? value) {
-    if (value == null) return;
-
-    setState(() {
-      _roast = value;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     final clicks = _clicks;
@@ -56,57 +43,43 @@ class _GrindSettingsScreenState extends State<GrindSettingsScreen> {
         title: const Text('Grind Setting'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(AppSpacing.md),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
               'Choose a brew method and roast level to get some click setting suggestions for the Timemore C3ESP.',
             ),
-            const SizedBox(height: 16),
-
-            DropdownButtonFormField<String>(
-              initialValue: _method,
-              decoration: const InputDecoration(
-                labelText: 'Brew method',
-                border: OutlineInputBorder(),
-              ),
-              items: _settings.keys.map((method) {
-                return DropdownMenuItem(
-                  value: method,
-                  child: Text(method),
-                );
-              }).toList(),
-              onChanged: _setMethod,
+            const SizedBox(height: AppSpacing.md),
+            DropdownSelector(
+              label: 'Brew method',
+              options: _settings.keys.toList(),
+              selected: _method,
+              onChanged: (value) {
+                if (value == null) return;
+                setState(() {
+                  _method = value;
+                });
+              },
             ),
-
-            const SizedBox(height: 16),
-
-            DropdownButtonFormField<String>(
-              initialValue: _roast,
-              decoration: const InputDecoration(
-                labelText: 'Roast level',
-                border: OutlineInputBorder(),
-              ),
-              items: const [
-                DropdownMenuItem(value: 'Medium', child: Text('Medium')),
-                DropdownMenuItem(value: 'Dark', child: Text('Dark')),
-              ],
-              onChanged: _setRoast,
+            const SizedBox(height: AppSpacing.md),
+            DropdownSelector(
+              label: 'Roast level',
+              options: const ['Medium', 'Dark'],
+              selected: _roast,
+              onChanged: (value) {
+                if (value == null) return;
+                setState(() {
+                  _roast = value;
+                });
+              },
             ),
-
-            const SizedBox(height: 24),
-
+            const SizedBox(height: AppSpacing.lg),
             if (clicks != null)
-              Card(
-                color: Theme.of(context).colorScheme.primaryContainer,
-                child: Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Text(
-                    'Suggested setting: $clicks clicks',
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                ),
+              GrindResultCard(
+                roastLevel: _roast,
+                grinder: 'Timemore C3ESP',
+                clickSetting: clicks,
               )
             else
               const Text('No setting found for this combination yet.'),

@@ -3,6 +3,10 @@ import '../utils/brew_calculations.dart';
 import 'notes_screen.dart';
 import '../widgets/app_nav_bar.dart';
 import '../utils/app_navigation.dart';
+import '../widgets/labeled_text_field.dart';
+import '../widgets/ratio_card.dart';
+import '../widgets/primary_button.dart';
+import '../theme.dart';
 
 class RatioCalculatorScreen extends StatefulWidget {
   const RatioCalculatorScreen({super.key});
@@ -73,60 +77,41 @@ class _RatioCalculatorScreenState extends State<RatioCalculatorScreen> {
         onSelect: (route) => navigateToRoute(context, route),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(AppSpacing.md),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
               'Enter your coffee dose and ratio to get the water amount.',
             ),
-            const SizedBox(height: 16),
-            TextField(
+            const SizedBox(height: AppSpacing.md),
+            LabeledTextField(
+              label: 'Coffee',
+              unit: 'grams',
               controller: _coffeeController,
               keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
-                labelText: 'Coffee (grams)',
-                border: OutlineInputBorder(),
-              ),
-              onChanged: (value) {
-                _calculateWater();
-              },
+              onChanged: (value) => _calculateWater(),
             ),
-            const SizedBox(height: 16),
-            TextField(
+            const SizedBox(height: AppSpacing.md),
+            LabeledTextField(
+              label: 'Ratio (1 : x)',
               controller: _ratioController,
               keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
-                labelText: 'Ratio (1 : x)',
-                border: OutlineInputBorder(),
-              ),
-              onChanged: (value) {
-                _calculateWater();
-              },
+              onChanged: (value) => _calculateWater(),
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: AppSpacing.lg),
             if (_hasResult) ...[
-              Card(
-                color: Theme.of(context).colorScheme.primaryContainer,
-                child: Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Use ${_waterResult.toStringAsFixed(1)}g of water',
-                        style: Theme.of(context).textTheme.titleLarge,
-                      ),
-                      Chip(label: Text(_strengthLabel)),
-                    ],
-                  ),
-                ),
+              RatioCard(
+                waterGrams: _waterResult.round(),
+                coffeeGrams: int.tryParse(_coffeeController.text) ?? 0,
+                ratio: double.tryParse(_ratioController.text) ?? 0,
+                strengthLabel: _strengthLabel,
               ),
-              const SizedBox(height: 16),
-              FilledButton.icon(
+              const SizedBox(height: AppSpacing.md),
+              PrimaryButton(
+                label: 'Save to Notes',
+                icon: Icons.save,
                 onPressed: _saveToNotes,
-                icon: const Icon(Icons.save),
-                label: const Text('Save to Notes'),
               ),
             ] else
               const Text('Enter values above to see the water amount.'),
