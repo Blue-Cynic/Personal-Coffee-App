@@ -24,7 +24,6 @@ personal data.
 
 ## Screenshots
 
-```markdown
 | Home | Ratio Calculator | Stopwatch |
 | --- | --- | --- |
 | ![Home](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/3-1.png) | ![Ratio Calculator](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/3-2.png) | ![Stopwatch](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/3-3.png) |
@@ -32,7 +31,6 @@ personal data.
 | Grind Setting | Notes |
 | --- | --- |
 | ![Grind Setting](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/3-4.png) | ![Notes](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/3-5.png) |
-```
 
 ## What it does
 
