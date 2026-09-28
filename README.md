@@ -27,11 +27,11 @@ personal data.
 ```markdown
 | Home | Ratio Calculator | Stopwatch |
 | --- | --- | --- |
-| ![Home](docs/assets/3-1.png) | ![Ratio Calculator](docs/assets/screen-calculator.png) | ![Stopwatch](docs/assets/screen-stopwatch.png) |
+| ![Home](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/3-1.png) | ![Ratio Calculator](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/3-2.png) | ![Stopwatch](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/3-3.png) |
 
 | Grind Setting | Notes |
 | --- | --- |
-| ![Grind Setting](docs/assets/screen-grind.png) | ![Notes](docs/assets/screen-notes.png) |
+| ![Grind Setting](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/3-4.png) | ![Notes](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/3-5.png) |
 ```
 
 ## What it does
