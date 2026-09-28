@@ -4,6 +4,7 @@ import '../utils/brew_calculations.dart';
 import '../widgets/app_nav_bar.dart';
 import '../utils/app_navigation.dart';
 import '../widgets/recipe_list_tile.dart';
+import '../utils/brew_session.dart';
 
 class BrewNote {
   final String brewMethod;
@@ -66,15 +67,11 @@ class BrewNote {
 }
 
 class NotesScreen extends StatefulWidget {
-  final int? prefillCoffeeGrams;
-  final int? prefillWaterGrams;
-  final String? prefillBrewMethod;
+  final bool openAddDialog;
 
   const NotesScreen({
     super.key,
-    this.prefillCoffeeGrams,
-    this.prefillWaterGrams,
-    this.prefillBrewMethod,
+    this.openAddDialog = false,
   });
 
   @override
@@ -88,13 +85,9 @@ class _NotesScreenState extends State<NotesScreen> {
   void initState() {
     super.initState();
 
-    if (widget.prefillCoffeeGrams != null && widget.prefillWaterGrams != null) {
+    if (widget.openAddDialog) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        _showAddNoteDialog(
-          initialCoffeeGrams: widget.prefillCoffeeGrams,
-          initialWaterGrams: widget.prefillWaterGrams,
-          initialMethod: widget.prefillBrewMethod,
-        );
+        _showAddNoteDialog();
       });
     }
   }
@@ -111,27 +104,28 @@ class _NotesScreenState extends State<NotesScreen> {
 
   void _addNote(BrewNote note) {
     _notesBox.add(note.toMap());
+    BrewSession.clear();
     setState(() {});
   }
 
-  void _showAddNoteDialog({
-    int? initialCoffeeGrams,
-    int? initialWaterGrams,
-    String? initialMethod,
-  }) {
+  void _showAddNoteDialog() {
     final coffeeController = TextEditingController(
-      text: initialCoffeeGrams?.toString() ?? '',
+      text: BrewSession.coffeeGrams?.toString() ?? '',
     );
     final waterController = TextEditingController(
-      text: initialWaterGrams?.toString() ?? '',
+      text: BrewSession.waterGrams?.toString() ?? '',
     );
-    final grindController = TextEditingController();
-    final brewTimeController = TextEditingController();
+    final grindController = TextEditingController(
+      text: BrewSession.grindSetting?.toString() ?? '',
+    );
+    final brewTimeController = TextEditingController(
+      text: BrewSession.brewTimeSeconds?.toString() ?? '',
+    );
     final tempController = TextEditingController();
     final tasteController = TextEditingController();
 
-    String method = initialMethod ?? 'Moka Pot';
-    String roast = 'Medium';
+    String method = BrewSession.brewMethod ?? 'Moka Pot';
+    String roast = BrewSession.roastLevel ?? 'Medium';
 
     showDialog(
       context: context,
@@ -218,6 +212,7 @@ class _NotesScreenState extends State<NotesScreen> {
               child: const Text('Cancel'),
             ),
             FilledButton(
+              style: FilledButton.styleFrom(minimumSize: const Size(64, 40)),
               onPressed: () {
                 final coffeeGrams = int.tryParse(coffeeController.text);
                 final waterGrams = int.tryParse(waterController.text);

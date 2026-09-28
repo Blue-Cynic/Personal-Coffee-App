@@ -7,6 +7,7 @@ import '../widgets/labeled_text_field.dart';
 import '../widgets/ratio_card.dart';
 import '../widgets/primary_button.dart';
 import '../theme.dart';
+import '../utils/brew_session.dart';
 
 class RatioCalculatorScreen extends StatefulWidget {
   const RatioCalculatorScreen({super.key});
@@ -34,6 +35,9 @@ class _RatioCalculatorScreenState extends State<RatioCalculatorScreen> {
       return;
     }
 
+    BrewSession.coffeeGrams = coffeeGrams.round();
+    BrewSession.waterGrams = (coffeeGrams * ratio).round();
+
     setState(() {
       _waterResult = coffeeGrams * ratio;
       _strengthLabel = calculateStrengthLabel(ratio);
@@ -42,19 +46,14 @@ class _RatioCalculatorScreenState extends State<RatioCalculatorScreen> {
   }
 
   void _saveToNotes() {
-    final coffeeGrams = int.tryParse(_coffeeController.text);
-
-    if (coffeeGrams == null || !_hasResult) {
+    if (!_hasResult) {
       return;
     }
 
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => NotesScreen(
-          prefillCoffeeGrams: coffeeGrams,
-          prefillWaterGrams: _waterResult.round(),
-        ),
+        builder: (context) => const NotesScreen(openAddDialog: true),
       ),
     );
   }
@@ -103,7 +102,7 @@ class _RatioCalculatorScreenState extends State<RatioCalculatorScreen> {
             if (_hasResult) ...[
               RatioCard(
                 waterGrams: _waterResult.round(),
-                coffeeGrams: int.tryParse(_coffeeController.text) ?? 0,
+                coffeeGrams: (double.tryParse(_coffeeController.text) ?? 0).round(),
                 ratio: double.tryParse(_ratioController.text) ?? 0,
                 strengthLabel: _strengthLabel,
               ),

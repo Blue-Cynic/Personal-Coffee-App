@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import '../widgets/dropdown_selector.dart';
 import '../widgets/grind_result_card.dart';
+import '../widgets/primary_button.dart';
+import '../utils/brew_session.dart';
 import '../theme.dart';
+import 'notes_screen.dart';
 
 class GrindSettingsScreen extends StatefulWidget {
   const GrindSettingsScreen({super.key});
@@ -35,6 +38,48 @@ class _GrindSettingsScreenState extends State<GrindSettingsScreen> {
   String? get _clicks => _settings[_method]?[_roast];
 
   @override
+  void initState() {
+    super.initState();
+    _updateSession();
+  }
+
+  void _updateSession() {
+    BrewSession.brewMethod = _method;
+    BrewSession.roastLevel = _roast;
+    BrewSession.grindSetting = _rangeMidpoint(_clicks);
+  }
+
+  int? _rangeMidpoint(String? range) {
+    if (range == null) {
+      return null;
+    }
+
+    final parts = range.split('-');
+
+    if (parts.length != 2) {
+      return int.tryParse(range);
+    }
+
+    final low = int.tryParse(parts[0]);
+    final high = int.tryParse(parts[1]);
+
+    if (low == null || high == null) {
+      return null;
+    }
+
+    return (low + high) ~/ 2;
+  }
+
+  void _saveToNotes() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const NotesScreen(openAddDialog: true),
+      ),
+    );
+  }
+
+  @override
   Widget build(BuildContext context) {
     final clicks = _clicks;
 
@@ -59,6 +104,7 @@ class _GrindSettingsScreenState extends State<GrindSettingsScreen> {
                 if (value == null) return;
                 setState(() {
                   _method = value;
+                  _updateSession();
                 });
               },
             ),
@@ -71,17 +117,29 @@ class _GrindSettingsScreenState extends State<GrindSettingsScreen> {
                 if (value == null) return;
                 setState(() {
                   _roast = value;
+                  _updateSession();
                 });
               },
             ),
             const SizedBox(height: AppSpacing.lg),
-            if (clicks != null)
+            if (clicks != null) ...[
               GrindResultCard(
                 roastLevel: _roast,
                 grinder: 'Timemore C3ESP',
                 clickSetting: clicks,
-              )
-            else
+              ),
+              const SizedBox(height: AppSpacing.md),
+              PrimaryButton(
+                label: 'Save to Notes',
+                icon: Icons.save,
+                onPressed: _saveToNotes,
+              ),
+              const SizedBox(height: AppSpacing.sm),
+              Text(
+                'The note starts with the middle of the range. Adjust it after you taste the brew.',
+                style: Theme.of(context).textTheme.labelSmall,
+              ),
+            ] else
               const Text('No setting found for this combination yet.'),
           ],
         ),
