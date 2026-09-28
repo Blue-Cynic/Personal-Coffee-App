@@ -24,40 +24,38 @@ personal data.
 
 ## Screenshots
 
-Put two or three real screenshots at phone size in `docs/assets/`, then replace
-this paragraph with them:
-
 ```markdown
-| Home | Detail | Add |
+| Home | Ratio Calculator | Stopwatch |
 | --- | --- | --- |
-| ![Home](docs/assets/screen-home.png) | ![Detail](docs/assets/screen-detail.png) | ![Add](docs/assets/screen-add.png) |
-```
+| ![Home](docs/assets/screen-home.png) | ![Ratio Calculator](docs/assets/screen-calculator.png) | ![Stopwatch](docs/assets/screen-stopwatch.png) |
 
-A repo without screenshots reads as abandoned, whatever the code says.
+| Grind Setting | Notes |
+| --- | --- |
+| ![Grind Setting](docs/assets/screen-grind.png) | ![Notes](docs/assets/screen-notes.png) |
+```
 
 ## What it does
 
-Three to five bullets. What can a user actually do?
-
-- The user can pick from 3 brew types to figure out what grind setting they need to use.
-- The user can calculate the coffee to water ratio of their recipe.
-- The user can create coffee recipe with the app.
-- The user can write down additional notes for their recipe.
+- The app can calculate the water needed for a coffee dose whilst providing a strength label (strong, balanced, and mild).
+- Can time a brew with the stopwatch
+- Suggests the number of clicks for a grinder (currently the Timemore C3ESP only) based on the roast type and the brew type.
+- Saves recipes (which contain brew type, coffee-to-water ratio, grind setting, temperature, taste notes, roast type, and the amount of coffee and water) to a notes app.
 
 ## Built with
 
 | | |
 | --- | --- |
 | Framework | Flutter (Dart) |
-| State | `setState` / provider / riverpod (say which) |
-| Storage | shared_preferences / Hive / Drift / Firebase / Supabase / other |
-| Other packages | list the ones that matter, with a word on why |
+| State | `setState` |
+| Storage | `hive_ce`, saved locally on the device (browser storage on web) |
+| Other packages | `hive_ce_flutter` (Hive setup for Flutter), `device_preview` (phone frame for the web build) |
 
 ## Running it yourself
 
 ```bash
+git clone https://github.com/Blue-Cynic/Personal-Coffee-App.git
+cd Personal-Coffee-App
 flutter pub get
-cp .env.example .env      # only if your app needs keys, see below
 flutter run -d web-server --web-port 8080
 ```
 
@@ -66,24 +64,13 @@ put yours here).
 
 ### Environment variables
 
-This project reads its configuration from a `.env` file that is **not** in the
-repository. Copy `.env.example`, fill in your own values, and never commit the
-result.
-
-| Variable | What it is | Where to get one |
-| --- | --- | --- |
-| `EXAMPLE_API_KEY` | ... | ... |
+There is none. The app does not use API keys, .env files, nor backend URL.
 
 ## Privacy and secrets
 
-Required section. Two or three honest sentences:
-
-- What personal data this app stores, if any, and where it goes.
-- Where the secrets live (`.env` locally, repository secrets in the deploy
-  workflow) and what protects the data on the service side (Firestore rules,
-  Supabase RLS, or "nothing leaves the device").
-- Confirm that all sample data, screenshots and the video contain **no real
-  personal information**.
+The app stores coffee recipes only on the user's device, through `hive_ce`. Nothing is sent anywhere.
+There is no backend, account, nor analytics. There are no API keys and secrets used, so the deploy workflow has neither to use.
+All the sample data, screenshots, and the video are invented. No personal data nor information are used.
 
 ## Project documentation
 
@@ -102,6 +89,7 @@ Required section. Two or three honest sentences:
 Be honest. What works, what is half done, what you would build next. An honest
 "known issues" section reads better than a claim the reader disproves in thirty
 seconds.
+**What works**: Calculator, stopwatch, grind setting suggester, notes, bottom nav bar, data persistence through `hive_ce`, and calculator screen to notes screen hand-off.
 
 ## Credits
 
