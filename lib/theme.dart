@@ -7,11 +7,18 @@ class AppSpacing {
   static const double lg = 24;
 }
 
+const Color _seedColor = Color(0xFF6F4E37);
+
 final appTheme = ThemeData(
   useMaterial3: true,
   colorScheme: ColorScheme.fromSeed(
-    seedColor: const Color(0xFF6F4E37),
+    seedColor: _seedColor,
     brightness: Brightness.light,
+  ),
+  appBarTheme: const AppBarTheme(
+    backgroundColor: _seedColor,
+    foregroundColor: Colors.white,
+    scrolledUnderElevation: 0,
   ),
   textTheme: const TextTheme(
     titleLarge: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
