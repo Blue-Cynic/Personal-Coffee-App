@@ -22,7 +22,13 @@ class AppNavBar extends StatelessWidget {
     return NavigationBar(
       selectedIndex: _selectedIndex,
       onDestinationSelected: (index) {
-        onSelect(_routes[index]);
+        final route = _routes[index];
+
+        if (route == activeRoute) {
+          return;
+        }
+
+        onSelect(route);
       },
       destinations: const [
         NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
