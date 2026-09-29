@@ -87,7 +87,7 @@ class _GrindSettingsScreenState extends State<GrindSettingsScreen> {
       appBar: AppBar(
         title: const Text('Grind Setting'),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(AppSpacing.md),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

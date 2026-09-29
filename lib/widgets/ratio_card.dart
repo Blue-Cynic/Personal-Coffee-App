@@ -24,10 +24,16 @@ class RatioCard extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              '${waterGrams}g water / ${coffeeGrams}g coffee',
-              style: Theme.of(context).textTheme.titleLarge,
+            Expanded(
+              child: Text(
+                '${waterGrams}g water / ${coffeeGrams}g coffee',
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge
+                    ?.copyWith(fontWeight: FontWeight.w600),
+              ),
             ),
+            const SizedBox(width: 8),
             StrengthBadge(label: strengthLabel),
           ],
         ),

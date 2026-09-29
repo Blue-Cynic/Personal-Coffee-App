@@ -75,7 +75,7 @@ class _RatioCalculatorScreenState extends State<RatioCalculatorScreen> {
         activeRoute: 'calculator',
         onSelect: (route) => navigateToRoute(context, route),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(AppSpacing.md),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
