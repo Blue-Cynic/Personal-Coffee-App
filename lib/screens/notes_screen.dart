@@ -232,7 +232,7 @@ class _NotesScreenState extends State<NotesScreen> {
                     coffeeGrams: coffeeGrams,
                     waterGrams: waterGrams,
                     ratio: ratio,
-                    strengthLabel: calculateStrengthLabel(ratio),
+                    strengthLabel: calculateStrengthLabel(method, ratio),
                     roastLevel: roast,
                     grindSetting: grindSetting,
                     brewTimeSeconds: brewTimeSeconds,

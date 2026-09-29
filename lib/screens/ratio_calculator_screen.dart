@@ -8,6 +8,7 @@ import '../widgets/ratio_card.dart';
 import '../widgets/primary_button.dart';
 import '../theme.dart';
 import '../utils/brew_session.dart';
+import '../widgets/dropdown_selector.dart';
 
 class RatioCalculatorScreen extends StatefulWidget {
   const RatioCalculatorScreen({super.key});
@@ -20,6 +21,7 @@ class _RatioCalculatorScreenState extends State<RatioCalculatorScreen> {
   final TextEditingController _coffeeController = TextEditingController();
   final TextEditingController _ratioController = TextEditingController(text: '15');
 
+  String _method = 'Moka Pot';
   double _waterResult = 0;
   String _strengthLabel = '';
   bool _hasResult = false;
@@ -35,12 +37,13 @@ class _RatioCalculatorScreenState extends State<RatioCalculatorScreen> {
       return;
     }
 
+    BrewSession.brewMethod = _method;
     BrewSession.coffeeGrams = coffeeGrams.round();
     BrewSession.waterGrams = (coffeeGrams * ratio).round();
 
     setState(() {
       _waterResult = coffeeGrams * ratio;
-      _strengthLabel = calculateStrengthLabel(ratio);
+      _strengthLabel = calculateStrengthLabel(_method, ratio);
       _hasResult = true;
     });
   }
@@ -81,7 +84,20 @@ class _RatioCalculatorScreenState extends State<RatioCalculatorScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Enter your coffee dose and ratio to get the water amount.',
+              'Choose your brew method, then enter coffee and ratio to get the water amount and strength.',
+            ),
+            const SizedBox(height: AppSpacing.md),
+            DropdownSelector(
+              label: 'Brew method',
+              options: const ['Moka Pot', 'French Press', 'Cold Brew'],
+              selected: _method,
+              onChanged: (value) {
+                if (value == null) return;
+                setState(() {
+                  _method = value;
+                });
+                _calculateWater();
+              },
             ),
             const SizedBox(height: AppSpacing.md),
             LabeledTextField(
