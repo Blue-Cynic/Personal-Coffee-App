@@ -8,7 +8,7 @@ This here is the V2 mockup. This was the original plan for the app. The app chan
 
 ## Wireframes
 
-This here is the wireframe. There were some changes such as the inclusion of a nav bar in the final build of the app. The lack of arrows is due to my personal belief that the wireframe is very straightforward enough. And because the app itself will have the option of being usable irregardless of which order of screens you go to.
+This here is the wireframe from prelim. There were some changes such as the inclusion of a nav bar in the midterm mockup and final build of the app. The lack of arrows is due to my personal belief that the wireframe is very straightforward enough. And because the app itself will have the option of being usable irregardless of which order of screens you go to.
 
 The way the app works is either through a sequence or based on what the user selects.
 When in sequence, the app follows this: Home -> Ratio Calculator -> Grind settings -> Stopwatch -> Notes.
@@ -21,7 +21,7 @@ When based on the user, anything goes.
 As stated before, the app either works in a sequence or based on which screen the user fancies.
 A nav bar is present in all screens and have the following: Home, Ratio Calculator, Grind Settings, Stopwatch, and Notes. This is to make traversing easier, especially with the lack of a back button, which in hindsight, the mockup never had either.
 
-# 1. Home
+### 1. Home
 
 This is the first screen. It has a Start Brewing button, a bit of text for help underneath it, and four tool cards/buttons: Ratio Calculator, Brew Stopwatch, Grind Setting, and Notes.
 
@@ -31,7 +31,7 @@ This is the first screen. It has a Start Brewing button, a bit of text for help 
 
 ![home](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-1.png)
 
-# 2. Calculator
+### 2. Calculator
 
 The user picks a brew method from a dropdown: Moka Pot, French Press, or Cold Brew. They enter coffee in grams and a ratio, which starts at 15. A result card shows the water and coffee amounts and a strength badge.
 
@@ -41,7 +41,7 @@ The user picks a brew method from a dropdown: Moka Pot, French Press, or Cold Br
 ![calculator](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-2.png)
 ![calculator2](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-6.png)
 
-# 3. Grind Setting
+### 3. Grind Setting
 
 The user picks a roast type, being Medium or Dark. A result card shows the suggested click settings for the Timemore C3ESP grinder. When not in sequence, the screen also has a brew method dropdown. When in a sequence, the method from the Calculator is shown as text instead. The app remembers the brew setting from the ratio calculator screen.
 
@@ -51,7 +51,7 @@ The user picks a roast type, being Medium or Dark. A result card shows the sugge
 ![grind setting](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-3.png)
 ![grind setting2](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-7.png)
 
-# 4. Timer
+### 4. Timer
 
 A large time readout with Start, Stop, and Reset buttons. It counts up as a stopwatch.
 
@@ -61,7 +61,7 @@ A large time readout with Start, Stop, and Reset buttons. It counts up as a stop
 ![stopwatch](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-4.png)
 ![stopwatch2](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-8.png)
 
-# 5. Notes
+### 5. Notes
 
 A list of saved brew notes, with the most recent being the first on top. Each one shows the method, ratio, roast, clicks, strength, and taste notes. An empty list shows a short message.
 

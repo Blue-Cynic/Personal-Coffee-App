@@ -1,14 +1,14 @@
 # Design system
 
 Prelim Design System:
-![Design system(PDF)](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/Espinosa%20App%20Design%20System.pdf)
+[Design system(PDF)](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/Espinosa%20App%20Design%20System.pdf)
 
 Midterm Design System:
-![Design system V2 (PDF)](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/Espinosa%20Design%20System%20V2.pdf)
+[Design system V2 (PDF)](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/Espinosa%20Design%20System%20V2.pdf)
 
 ## Palette
 
-The app is currently light mode only. One seed color is the driver of the entire scheme `ColorScheme.fromSeed` generates the other roles from it, so the code will set only three colors by hand.
+The app currently has light mode only. One seed color is the driver of the entire scheme `ColorScheme.fromSeed` generates the other roles from it, so the code will set only three colors by hand.
 
 | Role | Value | Used for |
 | --- | --- | --- |

@@ -65,7 +65,7 @@ I am gonna make the guess that it took me around 48 hours in total for this. Not
 
 ---
 
-## Week 3 of the finals
+## Week 3 of finals
 
 **Done this week**
 - Reworked the data hand-off from the other screens to the notes screens
@@ -75,7 +75,7 @@ I am gonna make the guess that it took me around 48 hours in total for this. Not
 - Removed the back button as the nav bar exists.
 
 **In progress**
-- Recent recipes in home screen
+- Recent recipes in home screen (as in, trying to figure out how to approach it)
 
 **Blocked or stuck on**
 - Nothing as far as I am aware of.

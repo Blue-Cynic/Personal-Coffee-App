@@ -1,7 +1,8 @@
 # Proposal
 
-Prelimn Proposal: ![Prelim Proposal](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/Espinosa%20App%20Proposal.pdf)
-Midterm Proposal: ![Midterm Proposal](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/Proposal%20V2.pdf)
+Prelim Proposal: [Prelim Proposal](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/Espinosa%20App%20Proposal.pdf)
+
+Midterm Proposal: [Midterm Proposal](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/Proposal%20V2.pdf)
 
 ## The problem, in one sentence
 My coffee is inconsistent because I struggle to keep track of my recipes and the variables that can affect it like grind size, roast type, and brewing time.
@@ -24,7 +25,7 @@ This is for me because I am a coffee addict who happens to brew with 3 brewing m
 ## Data the app remembers, and where it is saved
 | Thing | Fields | Where it is saved |
 | --- | --- | --- |
-| Recipe | brewMethod, coffeeGrams, waterGrams, ratio, strengthLabel, roastLevel, grindSetting, brewTimeSeconds, tasteNotes, tempCelsius, dateCreated | hive_ce local box, recipes |
+| Recipe | brewMethod, coffeeGrams, waterGrams, ratio, strengthLabel, roastLevel, grindSetting, brewTimeSeconds, tasteNotes, tempCelsius, dateCreated | hive_ce local box, notes |
 | Grinder profile (Timemore C3ESP only for MVP) | brewMethod, roastLevel, clickSetting | Dart Map constant in code (static reference data, not user data) |
 
 ## Risks
@@ -34,11 +35,11 @@ This is for me because I am a coffee addict who happens to brew with 3 brewing m
 
 ## Changes since the last version
 
-# September 28, 2026:
+## September 28, 2026:
 
 So, I have been hard at work in ensuring my app lives up to what was said in the proposal. That said, I feel that the UI is not a 1:1 recreation of what I had proposed. Not saying that is bad, I just feel a tad bit disappointed in myself. I am working hard to try and match my app with what I proposed, even if it is very difficult and will cause bugs, which is happening right now with the latest build.
 
-# September 30, 2026:
+## September 30, 2026:
 
 Some more drastic changes were done due to my dissatisfaction with the previous build of the app and from a valid criticism from a friend. The screen transitions were pretty much removed because they were too much trouble for me. The UI of the screens with the mockup are still not an exact match with the ones in the actual app, but I am fine with it because the functionality is there and it is not at all aesthetically offensive. Did also add an extra nav bar icon which was not present in the mockup as well. However, handing off data to the notes screen feels good now and I am happy with how it turned out.
 Of course, a major issue is the fact that there is no recent recipe screens. I will just have to add it in a later build.
