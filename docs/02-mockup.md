@@ -1,8 +1,5 @@
 # Mockup and wireframes
 
-The visual plan for this app. Your wireframes answered what goes where; the
-mockup shows what it looks like.
-
 ## Mockup
 
 This here is the V2 mockup. This was the original plan for the app. The app changed a lot based on looking at the current build.
@@ -12,6 +9,7 @@ This here is the V2 mockup. This was the original plan for the app. The app chan
 ## Wireframes
 
 This here is the wireframe. There were some changes such as the inclusion of a nav bar in the final build of the app. The lack of arrows is due to my personal belief that the wireframe is very straightforward enough. And because the app itself will have the option of being usable irregardless of which order of screens you go to.
+
 The way the app works is either through a sequence or based on what the user selects.
 When in sequence, the app follows this: Home -> Ratio Calculator -> Grind settings -> Stopwatch -> Notes.
 When based on the user, anything goes.
