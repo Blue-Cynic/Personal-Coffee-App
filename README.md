@@ -26,11 +26,11 @@ personal data.
 
 | Home | Ratio Calculator | Stopwatch |
 | --- | --- | --- |
-| ![Home](assets/4-1.png) | ![Ratio Calculator](assets/4-2.png) | ![Stopwatch](assets/4-4.png) |
+| ![Home](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-1.png) | ![Ratio Calculator](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-2.png) | ![Stopwatch](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-4.png) |
 
 | Grind Setting | Notes |
 | --- | --- |
-| ![Grind Setting](assets/4-3.png) | ![Notes](assets/4-5.png) |
+| ![Grind Setting](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-3.png) | ![Notes](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-5.png) |
 
 ## What it does
 
