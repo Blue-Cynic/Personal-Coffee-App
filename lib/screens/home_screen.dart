@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
-import 'ratio_calculator_screen.dart';
-import 'stopwatch_screen.dart';
-import 'grind_settings_screen.dart';
-import 'notes_screen.dart';
-import '../widgets/app_nav_bar.dart';
-import '../utils/app_navigation.dart';
+import '../widgets/primary_button.dart';
+import '../theme.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final VoidCallback onStartBrewing;
+  final ValueChanged<String> onOpenTool;
+
+  const HomeScreen({
+    super.key,
+    required this.onStartBrewing,
+    required this.onOpenTool,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,73 +18,82 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Coffee Brewing Companion'),
       ),
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          // wide screen for web browser and tablet will get 2 columns
-          // narrow screen for phones will get 1
-          int columns = 1;
-          if (constraints.maxWidth > 600) {
-            columns = 2;
-          }
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(
+              AppSpacing.md,
+              AppSpacing.md,
+              AppSpacing.md,
+              AppSpacing.sm,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: double.infinity,
+                  child: PrimaryButton(
+                    label: 'Start Brewing',
+                    icon: Icons.coffee,
+                    onPressed: onStartBrewing,
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.sm),
+                Text(
+                  'Go step by step, or open any tool below on its own.',
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                // wide screen for web browser and tablet will get 2 columns
+                // narrow screen for phones will get 1
+                int columns = 1;
+                if (constraints.maxWidth > 600) {
+                  columns = 2;
+                }
 
-          return GridView.count(
-            padding: const EdgeInsets.all(16),
-            crossAxisCount: columns,
-            childAspectRatio: 2.5,
-            mainAxisSpacing: 12,
-            crossAxisSpacing: 12,
-            children: [
-              _FeatureCard(
-                title: 'Ratio Calculator',
-                subtitle: 'Work out your coffee to water ratio',
-                icon: Icons.scale,
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const RatioCalculatorScreen()),
-                  );
-                },
-              ),
-              _FeatureCard(
-                title: 'Brew Stopwatch',
-                subtitle: 'Time your brew from start to finish',
-                icon: Icons.timer,
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const StopwatchScreen()),
-                  );
-                },
-              ),
-              _FeatureCard(
-                title: 'Grind Setting',
-                subtitle: 'Get a grind suggestion for the Timemore C3ESP',
-                icon: Icons.settings,
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const GrindSettingsScreen()),
-                  );
-                },
-              ),
-              _FeatureCard(
-                title: 'Notes',
-                subtitle: 'Log notes about a brew',
-                icon: Icons.note_alt,
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const NotesScreen()),
-                  );
-                },
-              ),
-            ],
-          );
-        },
-      ),
-      bottomNavigationBar: AppNavBar(
-        activeRoute: 'home',
-        onSelect: (route) => navigateToRoute(context, route),
+                return GridView.count(
+                  padding: const EdgeInsets.all(16),
+                  crossAxisCount: columns,
+                  childAspectRatio: 2.5,
+                  mainAxisSpacing: 12,
+                  crossAxisSpacing: 12,
+                  children: [
+                    _FeatureCard(
+                      title: 'Ratio Calculator',
+                      subtitle: 'Work out your coffee to water ratio',
+                      icon: Icons.scale,
+                      onTap: () => onOpenTool('calculator'),
+                    ),
+                    _FeatureCard(
+                      title: 'Brew Stopwatch',
+                      subtitle: 'Time your brew from start to finish',
+                      icon: Icons.timer,
+                      onTap: () => onOpenTool('timer'),
+                    ),
+                    _FeatureCard(
+                      title: 'Grind Setting',
+                      subtitle: 'Get a grind suggestion for the Timemore C3ESP',
+                      icon: Icons.settings,
+                      onTap: () => onOpenTool('grind'),
+                    ),
+                    _FeatureCard(
+                      title: 'Notes',
+                      subtitle: 'Log notes about a brew',
+                      icon: Icons.note_alt,
+                      onTap: () => onOpenTool('notes'),
+                    ),
+                  ],
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }

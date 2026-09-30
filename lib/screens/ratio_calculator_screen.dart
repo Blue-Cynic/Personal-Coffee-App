@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import '../utils/brew_calculations.dart';
-import 'notes_screen.dart';
-import '../widgets/app_nav_bar.dart';
-import '../utils/app_navigation.dart';
 import '../widgets/labeled_text_field.dart';
 import '../widgets/ratio_card.dart';
 import '../widgets/primary_button.dart';
@@ -11,7 +8,14 @@ import '../utils/brew_session.dart';
 import '../widgets/dropdown_selector.dart';
 
 class RatioCalculatorScreen extends StatefulWidget {
-  const RatioCalculatorScreen({super.key});
+  final bool inSequence;
+  final VoidCallback onNext;
+
+  const RatioCalculatorScreen({
+    super.key,
+    required this.inSequence,
+    required this.onNext,
+  });
 
   @override
   State<RatioCalculatorScreen> createState() => _RatioCalculatorScreenState();
@@ -48,19 +52,6 @@ class _RatioCalculatorScreenState extends State<RatioCalculatorScreen> {
     });
   }
 
-  void _saveToNotes() {
-    if (!_hasResult) {
-      return;
-    }
-
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const NotesScreen(openAddDialog: true),
-      ),
-    );
-  }
-
   @override
   void dispose() {
     _coffeeController.dispose();
@@ -73,10 +64,6 @@ class _RatioCalculatorScreenState extends State<RatioCalculatorScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Ratio Calculator'),
-      ),
-      bottomNavigationBar: AppNavBar(
-        activeRoute: 'calculator',
-        onSelect: (route) => navigateToRoute(context, route),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(AppSpacing.md),
@@ -123,11 +110,13 @@ class _RatioCalculatorScreenState extends State<RatioCalculatorScreen> {
                 strengthLabel: _strengthLabel,
               ),
               const SizedBox(height: AppSpacing.md),
-              PrimaryButton(
-                label: 'Save to Notes',
-                icon: Icons.save,
-                onPressed: _saveToNotes,
-              ),
+              // Only the sequence gets a Next button
+              if (widget.inSequence)
+                PrimaryButton(
+                  label: 'Next: Grind Setting',
+                  icon: Icons.arrow_forward,
+                  onPressed: widget.onNext,
+                ),
             ] else
               const Text('Enter values above to see the water amount.'),
           ],

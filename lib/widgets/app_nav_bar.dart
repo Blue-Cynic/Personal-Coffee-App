@@ -10,7 +10,13 @@ class AppNavBar extends StatelessWidget {
     required this.onSelect,
   });
 
-  static const List<String> _routes = ['home', 'calculator', 'timer', 'notes'];
+  static const List<String> _routes = [
+    'home',
+    'calculator',
+    'grind',
+    'timer',
+    'notes',
+  ];
 
   int get _selectedIndex {
     final index = _routes.indexOf(activeRoute);
@@ -33,6 +39,7 @@ class AppNavBar extends StatelessWidget {
       destinations: const [
         NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
         NavigationDestination(icon: Icon(Icons.calculate), label: 'Calc'),
+        NavigationDestination(icon: Icon(Icons.settings), label: 'Grind'),
         NavigationDestination(icon: Icon(Icons.timer), label: 'Timer'),
         NavigationDestination(icon: Icon(Icons.note_alt), label: 'Notes'),
       ],

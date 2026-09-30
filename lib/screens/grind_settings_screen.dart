@@ -4,10 +4,17 @@ import '../widgets/grind_result_card.dart';
 import '../widgets/primary_button.dart';
 import '../utils/brew_session.dart';
 import '../theme.dart';
-import 'notes_screen.dart';
 
 class GrindSettingsScreen extends StatefulWidget {
-  const GrindSettingsScreen({super.key});
+  // true when the user is going step by step from Start Brewing
+  final bool inSequence;
+  final VoidCallback onNext;
+
+  const GrindSettingsScreen({
+    super.key,
+    required this.inSequence,
+    required this.onNext,
+  });
 
   @override
   State<GrindSettingsScreen> createState() => _GrindSettingsScreenState();
@@ -40,6 +47,17 @@ class _GrindSettingsScreenState extends State<GrindSettingsScreen> {
   @override
   void initState() {
     super.initState();
+
+    final savedMethod = BrewSession.brewMethod;
+    if (savedMethod != null && _settings.containsKey(savedMethod)) {
+      _method = savedMethod;
+    }
+
+    final savedRoast = BrewSession.roastLevel;
+    if (savedRoast != null && (savedRoast == 'Medium' || savedRoast == 'Dark')) {
+      _roast = savedRoast;
+    }
+
     _updateSession();
   }
 
@@ -70,15 +88,6 @@ class _GrindSettingsScreenState extends State<GrindSettingsScreen> {
     return (low + high) ~/ 2;
   }
 
-  void _saveToNotes() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const NotesScreen(openAddDialog: true),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     final clicks = _clicks;
@@ -92,22 +101,33 @@ class _GrindSettingsScreenState extends State<GrindSettingsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'Choose a brew method and roast level to get some click setting suggestions for the Timemore C3ESP.',
-            ),
-            const SizedBox(height: AppSpacing.md),
-            DropdownSelector(
-              label: 'Brew method',
-              options: _settings.keys.toList(),
-              selected: _method,
-              onChanged: (value) {
-                if (value == null) return;
-                setState(() {
-                  _method = value;
-                  _updateSession();
-                });
-              },
-            ),
+            if (widget.inSequence) ...[
+              Text(
+                'Choose a roast level to get click setting suggestions for your $_method brew on the Timemore C3ESP.',
+              ),
+              const SizedBox(height: AppSpacing.md),
+              Text(
+                'Brew method: $_method',
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+            ] else ...[
+              const Text(
+                'Choose a brew method and roast level to get some click setting suggestions for the Timemore C3ESP.',
+              ),
+              const SizedBox(height: AppSpacing.md),
+              DropdownSelector(
+                label: 'Brew method',
+                options: _settings.keys.toList(),
+                selected: _method,
+                onChanged: (value) {
+                  if (value == null) return;
+                  setState(() {
+                    _method = value;
+                    _updateSession();
+                  });
+                },
+              ),
+            ],
             const SizedBox(height: AppSpacing.md),
             DropdownSelector(
               label: 'Roast level',
@@ -129,16 +149,19 @@ class _GrindSettingsScreenState extends State<GrindSettingsScreen> {
                 clickSetting: clicks,
               ),
               const SizedBox(height: AppSpacing.md),
-              PrimaryButton(
-                label: 'Save to Notes',
-                icon: Icons.save,
-                onPressed: _saveToNotes,
-              ),
-              const SizedBox(height: AppSpacing.sm),
-              Text(
-                'The note starts with the middle of the range. Adjust it after you taste the brew.',
-                style: Theme.of(context).textTheme.labelSmall,
-              ),
+              // Only the sequence gets a Next button
+              if (widget.inSequence) ...[
+                PrimaryButton(
+                  label: 'Next: Timer',
+                  icon: Icons.arrow_forward,
+                  onPressed: widget.onNext,
+                ),
+                const SizedBox(height: AppSpacing.sm),
+                Text(
+                  'The note starts with the middle of the range. Adjust it after you taste the brew.',
+                  style: Theme.of(context).textTheme.labelSmall,
+                ),
+              ],
             ] else
               const Text('No setting found for this combination yet.'),
           ],

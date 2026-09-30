@@ -1,7 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-import 'Package:hive_ce_flutter/hive_ce_flutter.dart';
-import 'screens/home_screen.dart';
+import 'package:hive_ce_flutter/hive_ce_flutter.dart';
+import 'screens/main_shell.dart';
 import 'theme.dart';
 
 void main() async {
@@ -32,7 +32,7 @@ class CoffeeCompanionApp extends StatelessWidget {
 
       theme: appTheme,
 
-      home: const HomeScreen(),
+      home: const MainShell(),
     );
   }
 }
