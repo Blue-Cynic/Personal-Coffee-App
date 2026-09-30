@@ -4,7 +4,7 @@
 
 This here is the V2 mockup. This was the original plan for the app. The app changed a lot based on looking at the current build.
 
-![mockup](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/Espinosa%20Mockup.jpg)
+![mockup](assets/Espinosa%20Mockup.jpg)
 
 ## Wireframes
 
@@ -14,7 +14,7 @@ The way the app works is either through a sequence or based on what the user sel
 When in sequence, the app follows this: Home -> Ratio Calculator -> Grind settings -> Stopwatch -> Notes.
 When based on the user, anything goes.
 
-![wireframe](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/Wireframe.png)
+![wireframe](assets/Wireframe.png)
 
 ## Screens
 
@@ -29,7 +29,7 @@ This is the first screen. It has a Start Brewing button, a bit of text for help 
 - A **tool card** opens that tool on its own.
 - The **nav bar** opens the matching screen.
 
-![home](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-1.png)
+![home](assets/4-1.png)
 
 ### 2. Calculator
 
@@ -38,8 +38,8 @@ The user picks a brew method from a dropdown: Moka Pot, French Press, or Cold Br
 - **Next: Grind Setting** opens Grind. It shows only in a sequence, and only once there is a result.
 - The **nav bar** opens any screen.
 
-![calculator](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-2.png)
-![calculator2](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-6.png)
+![calculator](assets/4-2.png)
+![calculator2](assets/4-6.png)
 
 ### 3. Grind Setting
 
@@ -48,8 +48,8 @@ The user picks a roast type, being Medium or Dark. A result card shows the sugge
 - **Next: Timer** opens the Timer. It shows only in a sequence.
 - The **nav bar** opens any screen.
 
-![grind setting](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-3.png)
-![grind setting2](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-7.png)
+![grind setting](assets/4-3.png)
+![grind setting2](assets/4-7.png)
 
 ### 4. Timer
 
@@ -58,8 +58,8 @@ A large time readout with Start, Stop, and Reset buttons. It counts up as a stop
 - **Next: Notes** opens a new note with the earlier values filled in. It shows only in a sequence, and only after the user stops a timed brew.
 - The **nav bar** opens any screen.
 
-![stopwatch](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-4.png)
-![stopwatch2](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-8.png)
+![stopwatch](assets/4-4.png)
+![stopwatch2](assets/4-8.png)
 
 ### 5. Notes
 
@@ -69,9 +69,9 @@ A list of saved brew notes, with the most recent being the first on top. Each on
 - **Save** stores the note in the list. Cancel closes the dialog.
 - The **nav bar** opens any screen.
 
-![notes](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-5.png)
-![notes2](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-9.png)
-![notes3](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/4-10.png)
+![notes](assets/4-5.png)
+![notes2](assets/4-9.png)
+![notes3](assets/4-10.png)
 
 ## What changed from the mockup
  

@@ -1,8 +1,8 @@
 # Proposal
 
-Prelim Proposal: [Prelim Proposal](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/Espinosa%20App%20Proposal.pdf)
+Prelim Proposal: [Prelim Proposal](assets/Espinosa%20App%20Proposal.pdf)
 
-Midterm Proposal: [Midterm Proposal](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/Proposal%20V2.pdf)
+Midterm Proposal: [Midterm Proposal](assets/Proposal%20V2.pdf)
 
 ## The problem, in one sentence
 My coffee is inconsistent because I struggle to keep track of my recipes and the variables that can affect it like grind size, roast type, and brewing time.

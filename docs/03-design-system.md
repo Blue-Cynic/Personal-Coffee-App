@@ -1,10 +1,10 @@
 # Design system
 
 Prelim Design System:
-[Design system(PDF)](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/Espinosa%20App%20Design%20System.pdf)
+[Design system(PDF)](assets/Espinosa%20App%20Design%20System.pdf)
 
 Midterm Design System:
-[Design system V2 (PDF)](https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/assets/Espinosa%20Design%20System%20V2.pdf)
+[Design system V2 (PDF)](assets/Espinosa%20Design%20System%20V2.pdf)
 
 ## Palette
 
