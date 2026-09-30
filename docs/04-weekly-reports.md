@@ -1,11 +1,5 @@
 # Weekly reports
 
-One entry per week, newest at the top, written **during** that week. Five minutes
-each. They are the record of how the project actually went, and they make your
-final reflection almost write itself.
-
-Copy this block:
-
 ---
 
 ## Week 1 of finals
@@ -74,20 +68,26 @@ I am gonna make the guess that it took me around 48 hours in total for this. Not
 ## Week 3 of the finals
 
 **Done this week**
--
+- Reworked the data hand-off from the other screens to the notes screens
+- Added a new nav bar icon
+- Added a Start Brewing button to the home screen in order to streamline the data hand-off process.
+- Transitions are removed due to difficulties with getting the nav bar to cooperate
+- Removed the back button as the nav bar exists.
 
 **In progress**
--
+- Recent recipes in home screen
 
 **Blocked or stuck on**
--
+- Nothing as far as I am aware of.
 
 **Decisions made, and why**
--
+- I decided to add a Start Brewing button. This is so I can easily streamline the process of the data hand-off to notes. I was not happy with the old way where it would redirect the person to Notes which felt inelegant. Due to this, it let me remove the ability for the screens to pass data to notes if you pressed the button of theirs in the home screen or nav bar. This lets the user freely use the tools without being bugged if they want to save to notes. The only way to put information to notes then is through the notes screen itself or after going through the steps of the Start Brewing button.
+- In practice, I removed the fancy screen transitions whenever the user moves to another screen. It was troublesome trying to make the nav bar not included in the transition, so I went with the nuclear option. And honestly, I kinda like the instantaneous changes more so than seeing a fancy transition animation. Made the app feel more responsive.
 
 **Hours spent, roughly:**
+It probably took me like 12 hours of work for this one. Not as bad as last week's thanks to the app being mostly done anyway by this week. I am pretty sure a good chunk of my work now is regarding the documentations and whatnot.
 
 **Next week I will:**
--
+- Make a recent recipes screen.
 
 ---

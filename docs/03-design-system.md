@@ -24,3 +24,4 @@ One row per reusable widget: what it is, which file it lives in, what parameters
 it takes, which screens use it.
 
 ## Changes since the last version
+- There is a lack of recent recipes in the home screen. Will likely add it in.
