@@ -70,9 +70,9 @@ All the sample data, screenshots, and the video are invented. No personal data i
 
 ## Status and what is next
 
-**What works**: Calculator, stopwatch, grind setting suggester, notes, bottom nav bar, data persistence through `hive_ce`, and calculator screen to grind settings screen, then to stopwatch screen, then to notes screen hand-off.
-**Next**: Add the recent recipe notes in the home screen, dark mode, and expand the grinder and brew type options
-**Known Issues**: The new brew note dialog in the notes screen increases whenever you type a large amount of text in its box
+- **What works**: Calculator, stopwatch, grind setting suggester, notes, bottom nav bar, data persistence through `hive_ce`, and calculator screen to grind settings screen, then to stopwatch screen, then to notes screen hand-off
+- **Next**: Add the recent recipe notes in the home screen, dark mode, and expand the grinder and brew type options
+- **Known Issues**: The new brew note dialog in the notes screen increases whenever you type a large amount of text in its box
 
 ## Credits
 
