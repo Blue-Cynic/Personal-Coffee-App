@@ -1,24 +1,11 @@
-<!--
-  This is your project's front page. Replace every placeholder below.
-  It is the first thing your instructor and any future employer will read, and
-  the live link in it is how your project gets opened for grading.
-
-  New here? Read START-HERE.md first. Delete this comment when you are done.
--->
-
 # Personal Coffee App
 
-> The here is a personal Flutter app for creating and keeping coffee brewing recipes and the variables that may affect the outcome of the drink. Said variables are: grind size, roast, brew time, and the brew method (currently supports moka pot, french press, and cold brew). It currently supports the Timemore C3ESP grinder.
+> This here is a personal Flutter app for creating and keeping coffee brewing recipes and the variables that may affect the outcome of the drink. Said variables are: grind size, roast, brew time, and the brew method (currently supports moka pot, french press, and cold brew). It currently supports the Timemore C3ESP grinder.
 
-**Live demo:** https://blue-cynic.github.io/Personal-Coffee-App/ <!-- GitHub Pages is set up already; replace if you host elsewhere -->
+**Live demo:** https://blue-cynic.github.io/Personal-Coffee-App/
 **Demo video:** `docs/demo.mp4` (link it here once it exists)
 **Course:** Applications Development and Emerging Technologies (6ADET), Holy Angel University
 **Author:** Raizen Espinosa
-
-This repository lives in the author's own GitHub account and is public on
-purpose. There is no `student.json` here and there should not be one: see
-`docs/06-security-and-privacy.md` for what a public repo means for secrets and
-personal data.
 
 ---
 
@@ -37,7 +24,7 @@ personal data.
 - The app can calculate the water needed for a coffee dose whilst providing a strength label (strong, balanced, and mild).
 - Can time a brew with the stopwatch
 - Suggests the number of clicks for a grinder (currently the Timemore C3ESP only) based on the roast type and the brew type.
-- Saves recipes (which contain brew type, coffee-to-water ratio, grind setting, temperature, taste notes, roast type, and the amount of coffee and water) to a notes app.
+- Saves recipes (which contain brew type, coffee-to-water ratio, grind setting, temperature, taste notes, roast type, and the amount of coffee and water) to a notes screen.
 
 ## Built with
 
@@ -57,8 +44,7 @@ flutter pub get
 flutter run -d web-server --web-port 8080
 ```
 
-Then open http://localhost:8080. Requires Flutter (run `flutter --version` and
-put yours here).
+Then open http://localhost:8080. Requires Flutter 3.47.2 or higher.
 
 ### Environment variables
 
@@ -67,7 +53,7 @@ There is none. The app does not use API keys, .env files, nor backend URL.
 ## Privacy and secrets
 
 The app stores coffee recipes only on the user's device, through `hive_ce`. Nothing is sent anywhere.
-There is no backend, account, nor analytics. There are no API keys and secrets used, so the deploy workflow has neither to use.
+There is no backend, account, nor analytics. There are no API keys and secrets used, so the deploy workflow has no secrets to use.
 All the sample data, screenshots, and the video are invented. No personal data nor information are used.
 
 ## Project documentation
@@ -84,10 +70,9 @@ All the sample data, screenshots, and the video are invented. No personal data n
 
 ## Status and what is next
 
-Be honest. What works, what is half done, what you would build next. An honest
-"known issues" section reads better than a claim the reader disproves in thirty
-seconds.
-**What works**: Calculator, stopwatch, grind setting suggester, notes, bottom nav bar, data persistence through `hive_ce`, and calculator screen to notes screen hand-off.
+**What works**: Calculator, stopwatch, grind setting suggester, notes, bottom nav bar, data persistence through `hive_ce`, and calculator screen to grind settings screen, then to stopwatch screen, then to notes screen hand-off.
+**Next**: Add the recent notes, dark mode, and expand the grinder and brew type options
+**Known Issues**: The new notes tab increases whenever you type a certain amount in its box
 
 ## Credits
 
@@ -101,11 +86,8 @@ things:
 
 ![Built with AI assistance](https://img.shields.io/badge/built%20with-AI%20assistance-0b5fff)
 
-claude by Anthropic and ChatGPT by OpenAI were used in assisting with the creation of this app. Be it through explaining concepts of Flutter, assisting with writing code, and assisting with the documentation.
+Claude by Anthropic and ChatGPT by OpenAI were used in assisting with the creation of this app. Be it through explaining concepts of Flutter, assisting with writing code, and assisting with the documentation.
 - a link to [AI-USAGE.md](AI-USAGE.md), where the full account lives
-
-Keep the detail in `AI-USAGE.md` rather than here. This section is the summary a
-visitor reads; that file is the record the badge is graded from.
 
 ## Licence
 
