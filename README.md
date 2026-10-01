@@ -25,6 +25,7 @@
 - Can time a brew with the stopwatch
 - Suggests the number of clicks for a grinder (currently the Timemore C3ESP only) based on the roast type and the brew type.
 - Saves recipes (which contain brew type, coffee-to-water ratio, grind setting, temperature, taste notes, roast type, and the amount of coffee and water) to a notes screen.
+- The app's screens can be in a sequence through pressing the Start Brewing button or based on what the user wants to use by pressing the tool cards/buttons in the home screen or the icons in the bottom nav bar.
 
 ## Built with
 
@@ -44,7 +45,7 @@ flutter pub get
 flutter run -d web-server --web-port 8080
 ```
 
-Then open http://localhost:8080. Requires Flutter 3.47.2 or higher.
+Then open http://localhost:8080. Built with Flutter 3.47.2.
 
 ### Environment variables
 
@@ -54,7 +55,7 @@ There is none. The app does not use API keys, .env files, nor backend URL.
 
 The app stores coffee recipes only on the user's device, through `hive_ce`. Nothing is sent anywhere.
 There is no backend, account, nor analytics. There are no API keys and secrets used, so the deploy workflow has no secrets to use.
-All the sample data, screenshots, and the video are invented. No personal data nor information are used.
+All the sample data, screenshots, and the video are invented. No personal data is used.
 
 ## Project documentation
 
@@ -65,14 +66,13 @@ All the sample data, screenshots, and the video are invented. No personal data n
 | [Design system](docs/03-design-system.md) | colors, type, spacing, components |
 | [Weekly reports](docs/04-weekly-reports.md) | what happened each week |
 | [Demo video](docs/05-demo-video.md) | the recording and what it shows |
-| [Start here](START-HERE.md) | how this repo works (delete once you have read it) |
 | [Security and privacy](docs/06-security-and-privacy.md) | the checklist, filled in |
 
 ## Status and what is next
 
 **What works**: Calculator, stopwatch, grind setting suggester, notes, bottom nav bar, data persistence through `hive_ce`, and calculator screen to grind settings screen, then to stopwatch screen, then to notes screen hand-off.
-**Next**: Add the recent notes, dark mode, and expand the grinder and brew type options
-**Known Issues**: The new notes tab increases whenever you type a certain amount in its box
+**Next**: Add the recent recipe notes in the home screen, dark mode, and expand the grinder and brew type options
+**Known Issues**: The new brew note dialog in the notes screen increases whenever you type a large amount of text in its box
 
 ## Credits
 
@@ -81,14 +81,11 @@ All the sample data, screenshots, and the video are invented. No personal data n
 
 ## AI use
 
-This section is the last 10 points of the finals badge, and it wants three
-things:
-
 ![Built with AI assistance](https://img.shields.io/badge/built%20with-AI%20assistance-0b5fff)
 
-Claude by Anthropic and ChatGPT by OpenAI were used in assisting with the creation of this app. Be it through explaining concepts of Flutter, assisting with writing code, and assisting with the documentation.
-- a link to [AI-USAGE.md](AI-USAGE.md), where the full account lives
+Claude by Anthropic and ChatGPT by OpenAI were used in assisting with the creation of this app. They did it through explaining concepts of Flutter, assisting with writing code, and assisting with the documentation. The full account and documentation is in AI-USAGE.md
+- [AI-USAGE.md](AI-USAGE.md)
 
 ## Licence
 
-MIT, see [LICENSE](LICENSE). Change it if you want different terms.
+MIT, see [LICENSE](LICENSE).
