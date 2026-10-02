@@ -9,8 +9,6 @@ looks exactly like what it is.
 
 ## 1. How I used AI
 
-At least six entries. One per real use. Every entry needs a commit link.
-
 ### 2026-09-19 - Boilerplate Designer
 
 - **Tool:** Claude
@@ -27,7 +25,7 @@ At least six entries. One per real use. Every entry needs a commit link.
 - **What I kept, what I changed, and why:** I kept most of it, just to preserve the logic as it worked well. As for changes, I changed a good bit of it because Claude provided it yet it did not closely resemble my mockup. So I ensured the stopwatch works and looks just like in my mockup.
 - **Commit:** https://github.com/Blue-Cynic/Personal-Coffee-App/commit/d8bef42568ff5ef0ba88c698590bc82639c844da
 
-### 2026-09-19 - Stopwatch Got Me Stopped
+### 2026-09-19 - Calculated Help
 
 - **Tool:** Claude
 - **What I asked for:** I asked Claude to help me build the logic for ratio_calculator.dart as I was a little stumped.
@@ -64,34 +62,28 @@ At least six entries. One per real use. Every entry needs a commit link.
 Three cases. Be specific. If you write that the AI was never wrong, this section
 scores zero.
 
-### Case 1 - short title
+### Case 1 - Transitioned to Fury
 
-- **What it gave me:**
-- **What was wrong with it:**
-- **What I did instead:**
-- **Commit:** https://github.com/YOUR-USERNAME/YOUR-REPO/commit/SHA
+- **What it gave me:** Screen transitions with the boiler plate we worked on.
+- **What was wrong with it:** The boilerplate code I and Claude worked with had fancy screen transitions which I liked at first. However, after a colleague tested my app, I realized there were issues. He pointed out that the nav bar transitions alongside the screen. So, what was once a nifty thing turned to an annoyance.
+- **What I did instead:** I effectively removed the screen transitions after getting tired trying to fix it. The app feels more responsive this way. This was done with the creation of MainShell, which holds the nav bar and swaps the screen above it without pushing routes, which means no more transitions.
+- **Commit:** https://github.com/Blue-Cynic/Personal-Coffee-App/commit/d8bef42568ff5ef0ba88c698590bc82639c844da#diff-935e56a557f0ab902a679f47de66345d9f47058bccb96f870e6383d19e2c86dd
 
-### Case 2 - short title
+### Case 2 - Ratio Calculator
 
-- **What it gave me:**
-- **What was wrong with it:**
-- **What I did instead:**
-- **Commit:** https://github.com/YOUR-USERNAME/YOUR-REPO/commit/SHA
+- **What it gave me:** Asked help with getting the screens to hand off data to the notes screen.
+- **What was wrong with it:** There was an overflow issue with the ratio calculator
+- **What I did instead:** Added in Expanded within the text output of ratio_card.dart. Lets the text wrap instead of trying to push the badge off.
+- **Commit:** https://github.com/Blue-Cynic/Personal-Coffee-App/commit/4c3be774c42818b035ad8a9131137006abb25b98#diff-785072aa90e74eb371c8dadd6a30c00e4f394b9af13f9b7e618b0d47773b4c99
 
-### Case 3 - short title
+### Case 3 - Stopwatch is a Time Stopper
 
-- **What it gave me:**
-- **What was wrong with it:**
-- **What I did instead:**
-- **Commit:** https://github.com/YOUR-USERNAME/YOUR-REPO/commit/SHA
+- **What it gave me:** Given the massive overhaul to turn my in-line code to reusable widgets, I asked AI for some help.
+- **What was wrong with it:** The stopwatch would soft lock the entire app. This had to do with the timer display widget. This had something to do with my new theme.dart. It demanded every button to be as wide as they can. The old timer would put three buttons in a row, side by side. There was no width limit, so they demanded infinite width, causing the app to fail.
+- **What I did instead:** Each button was wrapped in Expanded, so they all get an equal share of the row's width. This made the buttons behave as intended, and no longer freezes the app. 
+- **Commit:** https://github.com/Blue-Cynic/Personal-Coffee-App/commit/4a5caced3155f592c8bb7d74cdeee382cc836fc2
 
 ## 3. Who wrote what
-
-At least a fifth of this project is code you wrote yourself. Name it, and explain
-it in your own words.
-
-> Group projects: give each member their own heading below, and use your GitHub
-> handle as the heading. You are graded on your own section.
 
 ### Written by me
 
