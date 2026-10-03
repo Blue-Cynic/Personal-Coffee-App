@@ -1,12 +1,5 @@
 # AI usage
 
-This project was built with AI assistance. This file is the record of it. It is
-graded as the finals badge, and it is worth 100 points.
-
-Start it in week 1 and keep it up as you go. The commit history of this file is
-part of the evidence: a file written all at once the night before the deadline
-looks exactly like what it is.
-
 ## 1. How I used AI
 
 ### 2026-09-19 - Boilerplate Designer
@@ -99,4 +92,4 @@ Why is it built this way: The use of `toMap` and `fromMap` is because Hive uses 
 - **Commit:** https://github.com/Blue-Cynic/Personal-Coffee-App/commit/4a5caced3155f592c8bb7d74cdeee382cc836fc2
 - **What it does and why we kept it:** So, I decided to include two files here instead of just one. I had some help with some of the widgets, particularly the more complex ones. The simpler ones, such as these two, are instead made completely with AI. It clearly shows given that none of the ones I would consider fairly basic had no issues nor troubleshooting from my end.
 What they do: So, these are part of my commit which were turning in-line code amongst screens into reusable widgets. This is to make my life easy if I need to make some UI changes as I only change them and not every screen. `PrimaryButton` is one filled button that will take a label, an optional icon, and a callback. If an icon is given, it will build a `FilledButton.icon`. Else, it will instead build a plain `FilledButton`. `RecipeListTile` on the other hand, is one card that shows a title card, a subtitle, and an optional tap action. Before, every screen had in-line buttons and cards. Calculator had its own `FilledButton.icon` whilst Notes had its own `Card` and `ListTile`. They get replaced by these new widgets.
-Why I kept them: Biggest reason I kept them is because I am pretty sure my proposal mentioned the use of such widgets. Clearly, that put me in a bit of a panic because I was doing things in-line. So, I needed help with AI to speed up progress instead of getting stuck, which would suck because of the really bad time constraints. Other reason is because, it makes it easy for me to make UI changes in the future, should I need to do so. I won't have to fiddle around and juggle multiple screens and their code. And lastly, I checked their code and tested them myself and found nothing wrong with them. My biggest gripes were really with the more complex widgets, which I fixed some before committing and the others after committing because I missed some bugs. If you ever wonder why I missed some bugs, I did mostly light testing because I was in a panic and a hurry and would only ever find the more egregious bugs when I was admiring my work.
+Why I kept them: Biggest reason I kept them is because I am pretty sure my proposal mentioned the use of such widgets. Clearly, that put me in a bit of a panic because I was doing things in-line. So, I needed help with AI to speed up progress instead of getting stuck, which would suck because of the really bad time constraints. Other reason is because, it makes it easy for me to make UI changes in the future, should I need to do so. I won't have to fiddle around and juggle multiple screens and their code. And lastly, I checked their code and tested them myself and found nothing wrong with them. My biggest gripes were really with the more complex widgets, which I fixed some before committing and the others after committing because I missed some bugs. If you ever wonder why I missed some bugs, I did mostly light testing because I was in a panic and in a hurry. So, I would only ever find the more egregious bugs when I was admiring my work.
