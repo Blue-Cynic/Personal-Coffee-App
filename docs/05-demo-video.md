@@ -10,8 +10,6 @@ GDrive link: https://drive.google.com/drive/folders/16cZVO2yVOUmFoPT5ZczOZHe7UjQ
 
 ## What it shows
 
-A short list, in order, so a viewer can skip to what they need:
-
 - 0:00 Introductions
 - 0:13 The problem the app will tackle
 - 0:40 Demo
