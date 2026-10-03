@@ -22,7 +22,7 @@ looks exactly like what it is.
 - **Tool:** Claude
 - **What I asked for:** I asked Claude if it could assist me with the logic of the stopwatch for my stopwatch screen. This is because I am not well versed in StatefulWdigets.
 - **What it gave back:** Claude gave me a working stopwatch.
-- **What I kept, what I changed, and why:** I kept most of it, just to preserve the logic as it worked well. As for changes, I changed a good bit of it because Claude provided it yet it did not closely resemble my mockup. So I ensured the stopwatch works and looks just like in my mockup.
+- **What I kept, what I changed, and why:** I kept most of it, just to preserve the logic as it worked well. As for changes, I changed a good bit of it because what Claude provided did not closely resemble my mockup. So I ensured the stopwatch works and looks just like in my mockup.
 - **Commit:** https://github.com/Blue-Cynic/Personal-Coffee-App/commit/d8bef42568ff5ef0ba88c698590bc82639c844da
 
 ### 2026-09-19 - Calculated Help
@@ -65,15 +65,15 @@ scores zero.
 ### Case 1 - Transitioned to Fury
 
 - **What it gave me:** Screen transitions with the boiler plate we worked on.
-- **What was wrong with it:** The boilerplate code I and Claude worked with had fancy screen transitions which I liked at first. However, after a colleague tested my app, I realized there were issues. He pointed out that the nav bar transitions alongside the screen. So, what was once a nifty thing turned to an annoyance.
-- **What I did instead:** I effectively removed the screen transitions after getting tired trying to fix it. The app feels more responsive this way. This was done with the creation of `MainShell`, which holds the nav bar and swaps the screen above it without pushing routes, which means no more transitions.
+- **What was wrong with it:** The boilerplate code I and Claude worked with had fancy screen transitions which I liked at first. However, after a colleague tested my app, I realized there were issues. He pointed out that the nav bar transitions alongside the screen. So, what was once a nifty thing turned into an annoyance.
+- **What I did instead:** I effectively removed the screen transitions after getting tired of trying to fix it. The app feels more responsive this way. This was done with the creation of `MainShell`, which holds the nav bar and swaps the screen above it without pushing routes, which means no more transitions.
 - **Commit:** https://github.com/Blue-Cynic/Personal-Coffee-App/commit/d8bef42568ff5ef0ba88c698590bc82639c844da#diff-935e56a557f0ab902a679f47de66345d9f47058bccb96f870e6383d19e2c86dd
 
-### Case 2 - Ratio Calculator
+### Case 2 - Ratio Calculator Should be Ratio'd on X
 
 - **What it gave me:** Asked help with getting the screens to hand off data to the notes screen.
 - **What was wrong with it:** There was an overflow issue with the ratio calculator
-- **What I did instead:** Added in `Expanded` within the text output of `ratio_card.dart`. Lets the text wrap instead of trying to push the badge off.
+- **What I did instead:** Added in `Expanded` within the text output of `ratio_card.dart`. It lets the text wrap instead of trying to push the badge off.
 - **Commit:** https://github.com/Blue-Cynic/Personal-Coffee-App/commit/4c3be774c42818b035ad8a9131137006abb25b98#diff-785072aa90e74eb371c8dadd6a30c00e4f394b9af13f9b7e618b0d47773b4c99
 
 ### Case 3 - Stopwatch is a Time Stopper
@@ -89,12 +89,14 @@ scores zero.
 
 - **File:** notes_screen.dart
 - **Commit:** https://github.com/Blue-Cynic/Personal-Coffee-App/commit/7104c3d573bdd94478e62f764f60af3d2403ad35
-- **What it does and why it is built this way:** So, this is the so-called notes overhaul that was needed in order for notes to truly live up to what was proposed and be capable of what is in the plan and in my mind when I envisioned the coffee app. Of all the files I have worked on, this is the one I am the proudest of and the one I find best to explain. This is because the notes screen is to me, the most important screen of this entire app. For it can stand on its own without the other screens handing off data to it. Without further ado:
+- **What it does and why it is built this way:** So, this is the so-called notes overhaul that was needed in order for notes to truly live up to what was proposed and be capable of what is in the plan and in my mind when I envisioned the coffee app. I know it received some changes later in the newer commits, but, this is the one that was made by me. Any changes after this commit were done with myself and/or assistance of an AI. Of all the files I have worked on, this is the one I am the proudest of and the one I find best to explain. This is because the notes screen is to me, the most important screen of this entire app. For it can stand on its own without the other screens handing off data to it. Without further ado:
 What it does: So, `BrewNote` holds the entire recipe, which basically means every variable for coffee. The old one pretty much held only a method and a string. To save, you just press Save. This makes the Brew Note dialog turn the form into a BrewNote and write it to the notes Hive box. To show the notes, the screen reads every note from that box, sorts them to the most recent being at the top, and puts them all in a list. Each title shows the brew method, the coffee-to-water ratio, the roast type, the grind settings, the strength label, and the taste notes. To check the inputs, Save will do nothing unless coffee and water inputs are actually numbers and that coffee's inputs are not zero. The other number fields will just default to 0.
 Why is it built this way: The use of `toMap` and `fromMap` is because Hive uses plain maps. Having these methods written by hand prevents the generation of Hive adapters, which keeps things easy for baby's first app. The date is stored as an ISO text string because maps hold simple values. `tempCelsius` is read as a `num` and converted, because a number like 92 can be an `int`. Now, `_notes` is a getter that reads the box on every build, and `_addNote` writes to the box and calls for `SetState`. There is no second list that is kept in memory, so the screen and the saved data cannot drift apart. Ratio, which is dividing water and coffee are calculated at save time. The ratio and the appropriate strength label are stored in their note. Any rule changes with strength label will not rewrite old notes. The form is wrapped in `SingleChildScrollView`. This lets the seven fields fit in small screens with the keyboard active. The brew method and roast type live in plain local variables because the dropdowns have no need to rebuild anything. The controllers are disposed of in `.then` after the dialog closes. This keeps memory leaks from happening.
 
 ### The AI-written part I understand best
 
-- **File:**
-- **Commit:**
-- **What it does and why we kept it:**
+- **Files:** primary_button.dart, recipe_list_tile.dart
+- **Commit:** https://github.com/Blue-Cynic/Personal-Coffee-App/commit/4a5caced3155f592c8bb7d74cdeee382cc836fc2
+- **What it does and why we kept it:** So, I decided to include two files here instead of just one. I had some help with some of the widgets, particularly the more complex ones. The simpler ones, such as these two, are instead made completely with AI. It clearly shows given that none of the ones I would consider fairly basic had no issues nor troubleshooting from my end.
+What they do: So, these are part of my commit which were turning in-line code amongst screens into reusable widgets. This is to make my life easy if I need to make some UI changes as I only change them and not every screen. `PrimaryButton` is one filled button that will take a label, an optional icon, and a callback. If an icon is given, it will build a `FilledButton.icon`. Else, it will instead build a plain `FilledButton`. `RecipeListTile` on the other hand, is one card that shows a title card, a subtitle, and an optional tap action. Before, every screen had in-line buttons and cards. Calculator had its own `FilledButton.icon` whilst Notes had its own `Card` and `ListTile`. They get replaced by these new widgets.
+Why I kept them: Biggest reason I kept them is because I am pretty sure my proposal mentioned the use of such widgets. Clearly, that put me in a bit of a panic because I was doing things in-line. So, I needed help with AI to speed up progress instead of getting stuck, which would suck because of the really bad time constraints. Other reason is because, it makes it easy for me to make UI changes in the future, should I need to do so. I won't have to fiddle around and juggle multiple screens and their code. And lastly, I checked their code and tested them myself and found nothing wrong with them. My biggest gripes were really with the more complex widgets, which I fixed some before committing and the others after committing because I missed some bugs. If you ever wonder why I missed some bugs, I did mostly light testing because I was in a panic and a hurry and would only ever find the more egregious bugs when I was admiring my work.
