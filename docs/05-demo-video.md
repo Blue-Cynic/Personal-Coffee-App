@@ -1,7 +1,10 @@
 # Demo video
 
-**File:** `Coffee%20Brewing%20Companion.mp4` GDrive link: https://drive.google.com/drive/folders/16cZVO2yVOUmFoPT5ZczOZHe7UjQ_Tgtc
+**File:** `https://github.com/Blue-Cynic/Personal-Coffee-App/blob/main/docs/Coffee%20Brewing%20Companion.mp4`
+GDrive link: https://drive.google.com/drive/folders/16cZVO2yVOUmFoPT5ZczOZHe7UjQ_Tgtc
+
 **Length:** 4 minutes and 41 seconds
+
 **Recorded on:** My laptop, device preview is the iPhone SE
 
 ## What it shows
