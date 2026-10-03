@@ -18,7 +18,7 @@
 
 **Decisions made, and why**
 - Decided not to do grind_settings_screen and notes_screen. This is because of the time constraints. It did not help I had 2 quizzes for the week too, and one of them is from a brutal subject. The former in particular would mean me having to do some research for the clicks, which will use up valuable time.
-- No using of hive_ce just yet. This is because I am still trying to understand it and the time constraints mean I cannot work on it.
+- No using of `hive_ce` just yet. This is because I am still trying to understand it and the time constraints mean I cannot work on it.
 - No passing of data yet. This is because notes_screen is not yet made and hive_ce is not yet integrated.
 
 **Hours spent, roughly:** Probably around 12 - 14 hours in total. Was already trying to make some bits of the app before creating the repo (my priorities are all over the place).
@@ -36,7 +36,7 @@
 
 **Done this week**
 - Rebuilt notes screen
-- Integrated hive_ce
+- Integrated `hive_ce`
 - Finished grind settings
 - Added Timemore C3ESP settings
 - Added live ratio and strength label in notes
@@ -89,5 +89,6 @@ It probably took me like 12 hours of work for this one. Not as bad as last week'
 
 **Next week I will:**
 - Make a recent recipes screen.
+- Delete recipes function
 
 ---
