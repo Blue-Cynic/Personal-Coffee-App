@@ -3,8 +3,11 @@
 > This here is a personal Flutter app for creating and keeping coffee brewing recipes and the variables that may affect the outcome of the drink. Said variables are: grind size, roast, brew time, and the brew method (currently supports moka pot, french press, and cold brew). It currently supports the Timemore C3ESP grinder.
 
 **Live demo:** https://blue-cynic.github.io/Personal-Coffee-App/
+
 **Demo video:** `docs/demo.mp4` (link it here once it exists)
+
 **Course:** Applications Development and Emerging Technologies (6ADET), Holy Angel University
+
 **Author:** Raizen Espinosa
 
 ---
