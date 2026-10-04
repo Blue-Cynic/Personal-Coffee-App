@@ -4,7 +4,7 @@
 
 **Live demo:** https://blue-cynic.github.io/Personal-Coffee-App/
 
-**Demo video:** `docs/Coffee%20Brewing%20Companion.mp4` (link it here once it exists)
+**Demo video:** docs/Coffee%20Brewing%20Companion.mp4 (link it here once it exists)
 
 **Course:** Applications Development and Emerging Technologies (6ADET), Holy Angel University
 
