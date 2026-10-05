@@ -1,6 +1,6 @@
 # Security and privacy
 
-**Last checked:** 2026-09-29
+**Last checked:** 2026-10-04
 
 ## What this app stores
 
